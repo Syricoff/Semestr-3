@@ -1,0 +1,47 @@
+Turbo Assembler	 Version 4.1	    09/09/24 09:52:37	    Page 1
+test.ASM
+
+
+
+      1	0000			     .model small
+      2	0000			     .stack 100h
+      3	0000			     .data
+      4	0000  D0 97 D0 B0 D0 BF	D1+  message db	'Запустите программу в отладчике','$'
+      5	      83 D1 81 D1 82 D0	B8+
+      6	      D1 82 D0 B5 20 D0	BF+
+      7	      D1 80 D0 BE D0 B3	D1+
+      8	      80 D0 B0 D0 BC D0	BC+
+      9	      D1 83 20 D0 B2 20	D0+
+     10	      BE D1 82 D0 BB D0	B0+
+     11	      D0 B4 D1 87 D0 B8	D0+
+     12	      BA D0 B5 24
+     13	003C  FF		     perem_1 db	0ffh
+     14	003D  3A7F		     perem_2 dw	3a7fh
+     15	003F  F54D567A		     perem_3 dd	0f54d567ah
+     16	0043  05*(20)		     mas     db	5 dup (' ')
+     17	0048  05*(??)		     pole_1 db 5 dup (?)
+     18	004D  003Fr		     adr dw perem_3
+     19	004F  0000003Fsr	     adr_full dd perem_3
+     20	0053  0B 22 38 17	     numbers db	11, 34,	56, 23
+     21	0057  D0 9A D0 BE D0 BD	D0+  fin db 'Конец	сегмента данных программы $'
+     22	      B5 D1 86 20 D1 81	D0+
+     23	      B5 D0 B3 D0 BC D0	B5+
+     24	      D0 BD D1 82 D0 B0	20+
+     25	      D0 B4 D0 B0 D0 BD	D0+
+     26	      BD D1 8B D1 85 20	D0+
+     27	      BF D1 80 D0 BE D0	B3+
+     28	      D1 80 D0 B0 D0 BC	D0+
+     29	      BC D1 8B 20 24
+     30	0094			     .code
+     31	0000			     start:
+     32	0000  B8 0000s			   mov ax, @data
+     33	0003  8E D8			       mov ds, ax
+     34	0005  B4 09			       mov ah, 09h
+     35	0007  BA 0000r			       mov dx, offset message
+     36	000A  CD 21			       int 21h
+     37	000C  B4 07			       mov ah, 7h
+     38	000E  CD 21			       int 21h
+     39	0010  B8 4C00			       mov ax, 4c00h
+     40	0013  CD 21			       int 21h
+     41				     end start
+
