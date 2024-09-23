@@ -1,0 +1,3 @@
+/home/syricoff/Semestr_3/DTaS/LR1/src/build/CMakeFiles/DoubleListApp.dir
+/home/syricoff/Semestr_3/DTaS/LR1/src/build/CMakeFiles/edit_cache.dir
+/home/syricoff/Semestr_3/DTaS/LR1/src/build/CMakeFiles/rebuild_cache.dir
