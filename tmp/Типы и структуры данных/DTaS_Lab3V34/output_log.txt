@@ -1,0 +1,374 @@
+[Tue Dec 27 00:32:07 2022]Function call: mPrintGraph
+[Tue Dec 27 00:32:11 2022]Function call: mReadGraphFromFile
+[Tue Dec 27 00:32:11 2022]
+
+[Tue Dec 27 00:32:16 2022]Function call: mPrintGraph
+[Tue Dec 27 00:32:25 2022]Function call: mFillRandomly
+[Tue Dec 27 00:32:27 2022]Function call: mFillRandomly
+[Tue Dec 27 00:32:32 2022]Function call: mPrintGraph
+[Tue Dec 27 00:32:39 2022]Function call: mReadGraphFromFile
+[Tue Dec 27 00:32:39 2022]
+
+[Tue Dec 27 00:38:44 2022]Function call: mInsertVertex
+[Tue Dec 27 00:38:44 2022]
+[inf]
+
+[Tue Dec 27 00:38:51 2022]Function call: mPrintGraph
+[Tue Dec 27 00:38:51 2022]
+[inf]
+
+[Tue Dec 27 00:39:01 2022]Function call: mInsertVertex
+[Tue Dec 27 00:39:01 2022]
+[inf, inf]
+[inf, inf]
+
+[Tue Dec 27 00:39:05 2022]Function call: mPrintGraph
+[Tue Dec 27 00:39:05 2022]
+[inf, inf]
+[inf, inf]
+
+[Tue Dec 27 00:39:15 2022]Function call: mCreateEdge
+[Tue Dec 27 00:39:34 2022]
+[inf, inf]
+[inf, 10]
+
+[Tue Dec 27 00:39:38 2022]Function call: mPrintGraph
+[Tue Dec 27 00:39:38 2022]
+[inf, inf]
+[inf, 10]
+
+[Tue Dec 27 00:51:20 2022]Function call: mPrintGraph
+[Tue Dec 27 00:51:23 2022]Function call: mReadGraphFromFile
+[Tue Dec 27 00:51:23 2022]
+
+[Tue Dec 27 00:51:26 2022]Function call: mReadGraphFromFile
+[Tue Dec 27 00:51:26 2022]
+
+[Tue Dec 27 00:52:23 2022]Function call: mPrintGraph
+[Tue Dec 27 00:52:25 2022]Function call: mReadGraphFromFile
+[Tue Dec 27 00:52:25 2022]
+
+[Tue Dec 27 00:52:27 2022]Function call: mPrintGraph
+[Tue Dec 27 00:53:11 2022]Function call: mPrintGraph
+[Tue Dec 27 00:53:13 2022]Function call: mReadGraphFromFile
+[Tue Dec 27 00:53:57 2022]Function call: mPrintGraph
+[Tue Dec 27 00:53:59 2022]Function call: mReadGraphFromFile
+[Tue Dec 27 00:56:59 2022]Function call: mPrintGraph
+[Tue Dec 27 00:57:03 2022]Function call: mReadGraphFromFile
+[Tue Dec 27 00:57:47 2022]Function call: mPrintGraph
+[Tue Dec 27 00:57:50 2022]Function call: mReadGraphFromFile
+[Tue Dec 27 00:59:45 2022]Function call: mPrintGraph
+[Tue Dec 27 00:59:48 2022]Function call: mReadGraphFromFile
+[Tue Dec 27 01:00:57 2022]Function call: mPrintGraph
+[Tue Dec 27 01:00:59 2022]Function call: mReadGraphFromFile
+[Tue Dec 27 01:00:59 2022]
+[inf, 10, inf, 30, 100]
+[inf, inf, 50, inf, inf]
+[inf, inf, inf, inf, 10]
+[inf, inf, 20, inf, 60]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 01:01:03 2022]Function call: mPrintGraph
+[Tue Dec 27 01:01:03 2022]
+[inf, 10, inf, 30, 100]
+[inf, inf, 50, inf, inf]
+[inf, inf, inf, inf, 10]
+[inf, inf, 20, inf, 60]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 01:01:21 2022]Function call: mHamiltonianPath
+[Tue Dec 27 01:01:21 2022]
+[inf, 10, inf, 30, 100]
+[inf, inf, 50, inf, inf]
+[inf, inf, inf, inf, 10]
+[inf, inf, 20, inf, 60]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 01:01:26 2022]Function call: mBreadthFirstSearch
+[Tue Dec 27 01:01:28 2022]
+[inf, 10, inf, 30, 100]
+[inf, inf, 50, inf, inf]
+[inf, inf, inf, inf, 10]
+[inf, inf, 20, inf, 60]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 01:01:31 2022]Function call: mBreadthFirstSearch
+[Tue Dec 27 01:04:14 2022]Function call: mPrintGraph
+[Tue Dec 27 01:04:15 2022]Function call: mReadGraphFromFile
+[Tue Dec 27 01:04:15 2022]
+[inf, 10, inf, 30, 100]
+[inf, inf, 50, inf, inf]
+[inf, inf, inf, inf, 10]
+[inf, inf, 20, inf, 60]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 01:04:19 2022]Function call: mPrintGraph
+[Tue Dec 27 01:04:19 2022]
+[inf, 10, inf, 30, 100]
+[inf, inf, 50, inf, inf]
+[inf, inf, inf, inf, 10]
+[inf, inf, 20, inf, 60]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 01:04:22 2022]Function call: mFillRandomly
+[Tue Dec 27 01:04:35 2022]
+[24, inf, 15, 21, 13]
+[18, 23, 22, 18, 24]
+[20, 22, 17, 18, 21]
+[25, 10, 21, 24, 13]
+[21, inf, 19, 23, 25]
+
+[Tue Dec 27 01:04:39 2022]Function call: mPrintGraph
+[Tue Dec 27 01:04:39 2022]
+[24, inf, 15, 21, 13]
+[18, 23, 22, 18, 24]
+[20, 22, 17, 18, 21]
+[25, 10, 21, 24, 13]
+[21, inf, 19, 23, 25]
+
+[Tue Dec 27 01:04:45 2022]Function call: mHamiltonianPath
+[Tue Dec 27 01:04:46 2022]
+[24, inf, 15, 21, 13]
+[18, 23, 22, 18, 24]
+[20, 22, 17, 18, 21]
+[25, 10, 21, 24, 13]
+[21, inf, 19, 23, 25]
+
+[Tue Dec 27 01:04:49 2022]Function call: mHamiltonianPath
+[Tue Dec 27 01:04:49 2022]
+[24, inf, 15, 21, 13]
+[18, 23, 22, 18, 24]
+[20, 22, 17, 18, 21]
+[25, 10, 21, 24, 13]
+[21, inf, 19, 23, 25]
+
+[Tue Dec 27 01:05:08 2022]Function call: mBreadthFirstSearch
+[Tue Dec 27 01:05:11 2022]
+[24, inf, 15, 21, 13]
+[18, 23, 22, 18, 24]
+[20, 22, 17, 18, 21]
+[25, 10, 21, 24, 13]
+[21, inf, 19, 23, 25]
+
+[Tue Dec 27 01:05:23 2022]Function call: mDepthFirstSearch
+[Tue Dec 27 01:05:24 2022]
+[24, inf, 15, 21, 13]
+[18, 23, 22, 18, 24]
+[20, 22, 17, 18, 21]
+[25, 10, 21, 24, 13]
+[21, inf, 19, 23, 25]
+
+[Tue Dec 27 01:14:34 2022]Function call: mPrintGraph
+[Tue Dec 27 01:14:36 2022]Function call: mReadGraphFromFile
+[Tue Dec 27 01:14:36 2022]
+[inf, 10, inf, 30, 100]
+[inf, inf, 50, inf, inf]
+[inf, inf, inf, inf, 10]
+[inf, inf, 20, inf, 60]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 01:14:38 2022]Function call: mPrintGraph
+[Tue Dec 27 01:14:38 2022]
+[inf, 10, inf, 30, 100]
+[inf, inf, 50, inf, inf]
+[inf, inf, inf, inf, 10]
+[inf, inf, 20, inf, 60]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:42:45 2022]Function call: mPrintGraph
+[Tue Dec 27 10:42:55 2022]Function call: mPrintGraph
+[Tue Dec 27 10:43:06 2022]Function call: mReadGraphFromFile
+[Tue Dec 27 10:43:06 2022]
+[inf, 10, inf, 30, 100]
+[inf, inf, 50, inf, inf]
+[inf, inf, inf, inf, 10]
+[inf, inf, 20, inf, 60]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:43:07 2022]Function call: mPrintGraph
+[Tue Dec 27 10:43:07 2022]
+[inf, 10, inf, 30, 100]
+[inf, inf, 50, inf, inf]
+[inf, inf, inf, inf, 10]
+[inf, inf, 20, inf, 60]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:43:12 2022]Function call: mFillRandomly
+[Tue Dec 27 10:43:23 2022]
+[13, 9, 6, inf, 8]
+[9, 14, 6, 10, inf]
+[8, 5, 5, 13, 11]
+[5, 6, 7, 16, 5]
+[12, 17, 15, inf, 14]
+
+[Tue Dec 27 10:43:26 2022]Function call: mPrintGraph
+[Tue Dec 27 10:43:26 2022]
+[13, 9, 6, inf, 8]
+[9, 14, 6, 10, inf]
+[8, 5, 5, 13, 11]
+[5, 6, 7, 16, 5]
+[12, 17, 15, inf, 14]
+
+[Tue Dec 27 10:43:35 2022]Function call: mGraphIsEmpty
+[Tue Dec 27 10:43:35 2022]
+[13, 9, 6, inf, 8]
+[9, 14, 6, 10, inf]
+[8, 5, 5, 13, 11]
+[5, 6, 7, 16, 5]
+[12, 17, 15, inf, 14]
+
+[Tue Dec 27 10:43:39 2022]Function call: mInsertVertex
+[Tue Dec 27 10:43:39 2022]
+[13, 9, 6, inf, 8, inf]
+[9, 14, 6, 10, inf, inf]
+[8, 5, 5, 13, 11, inf]
+[5, 6, 7, 16, 5, inf]
+[12, 17, 15, inf, 14, inf]
+[inf, inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:43:43 2022]Function call: mPrintGraph
+[Tue Dec 27 10:43:43 2022]
+[13, 9, 6, inf, 8, inf]
+[9, 14, 6, 10, inf, inf]
+[8, 5, 5, 13, 11, inf]
+[5, 6, 7, 16, 5, inf]
+[12, 17, 15, inf, 14, inf]
+[inf, inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:43:50 2022]Function call: mDeleteVertex
+[Tue Dec 27 10:43:56 2022]
+[13, 6, inf, 8, inf]
+[8, 5, 13, 11, inf]
+[5, 7, 16, 5, inf]
+[12, 15, inf, 14, inf]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:43:58 2022]Function call: mPrintGraph
+[Tue Dec 27 10:43:58 2022]
+[13, 6, inf, 8, inf]
+[8, 5, 13, 11, inf]
+[5, 7, 16, 5, inf]
+[12, 15, inf, 14, inf]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:44:11 2022]Function call: mCreateEdge
+[Tue Dec 27 10:44:20 2022]
+[13, 6, inf, 8, inf]
+[8, 5, 13, 11, inf]
+[5, 7, 16, 13, inf]
+[12, 15, 13, 14, inf]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:44:25 2022]Function call: mPrintGraph
+[Tue Dec 27 10:44:25 2022]
+[13, 6, inf, 8, inf]
+[8, 5, 13, 11, inf]
+[5, 7, 16, 13, inf]
+[12, 15, 13, 14, inf]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:44:38 2022]Function call: mCreateArc
+[Tue Dec 27 10:44:45 2022]
+[13, 6, inf, 8, inf]
+[8, 5, 3, 11, inf]
+[5, 7, 16, 13, inf]
+[12, 15, 13, 14, inf]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:44:49 2022]Function call: mPrintGraph
+[Tue Dec 27 10:44:49 2022]
+[13, 6, inf, 8, inf]
+[8, 5, 3, 11, inf]
+[5, 7, 16, 13, inf]
+[12, 15, 13, 14, inf]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:45:00 2022]Function call: mDeleteEdge
+[Tue Dec 27 10:45:02 2022]
+[13, 6, inf, 8, inf]
+[8, 5, inf, 11, inf]
+[5, inf, 16, 13, inf]
+[12, 15, 13, 14, inf]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:45:05 2022]Function call: mPrintGraph
+[Tue Dec 27 10:45:05 2022]
+[13, 6, inf, 8, inf]
+[8, 5, inf, 11, inf]
+[5, inf, 16, 13, inf]
+[12, 15, 13, 14, inf]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:45:15 2022]Function call: mBreadthFirstSearch
+[Tue Dec 27 10:45:16 2022]
+[13, 6, inf, 8, inf]
+[8, 5, inf, 11, inf]
+[5, inf, 16, 13, inf]
+[12, 15, 13, 14, inf]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:45:19 2022]Function call: mDepthFirstSearch
+[Tue Dec 27 10:45:20 2022]
+[13, 6, inf, 8, inf]
+[8, 5, inf, 11, inf]
+[5, inf, 16, 13, inf]
+[12, 15, 13, 14, inf]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:45:27 2022]Function call: mHamiltonianPath
+[Tue Dec 27 10:45:27 2022]
+[13, 6, inf, 8, inf]
+[8, 5, inf, 11, inf]
+[5, inf, 16, 13, inf]
+[12, 15, 13, 14, inf]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:45:32 2022]Function call: mDijkstra
+[Tue Dec 27 10:45:33 2022]
+[13, 6, inf, 8, inf]
+[8, 5, inf, 11, inf]
+[5, inf, 16, 13, inf]
+[12, 15, 13, 14, inf]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 10:45:56 2022]Function call: mPrintGraph
+[Tue Dec 27 10:45:56 2022]
+[13, 6, inf, 8, inf]
+[8, 5, inf, 11, inf]
+[5, inf, 16, 13, inf]
+[12, 15, 13, 14, inf]
+[inf, inf, inf, inf, inf]
+
+[Tue Dec 27 11:32:30 2022]Function call: mPrintGraph
+[Wed Dec 28 08:45:31 2022]Function call: mReadGraphFromFile
+[Wed Dec 28 08:45:31 2022]
+[inf, 10, inf, 30, 100]
+[inf, inf, 50, inf, inf]
+[inf, inf, inf, inf, 10]
+[inf, inf, 20, inf, 60]
+[inf, inf, inf, inf, inf]
+
+[Wed Dec 28 08:45:35 2022]Function call: mPrintGraph
+[Wed Dec 28 08:45:35 2022]
+[inf, 10, inf, 30, 100]
+[inf, inf, 50, inf, inf]
+[inf, inf, inf, inf, 10]
+[inf, inf, 20, inf, 60]
+[inf, inf, inf, inf, inf]
+
+[Wed Dec 28 08:45:40 2022]Function call: mFordFulkerson
+[Wed Dec 28 08:45:45 2022]
+[inf, 10, inf, 30, 100]
+[inf, inf, 50, inf, inf]
+[inf, inf, inf, inf, 10]
+[inf, inf, 20, inf, 60]
+[inf, inf, inf, inf, inf]
+
+[Wed Dec 28 08:45:58 2022]Function call: mPrintGraph
+[Wed Dec 28 08:45:58 2022]
+[inf, 10, inf, 30, 100]
+[inf, inf, 50, inf, inf]
+[inf, inf, inf, inf, 10]
+[inf, inf, 20, inf, 60]
+[inf, inf, inf, inf, inf]
+

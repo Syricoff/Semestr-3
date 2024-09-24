@@ -13,3 +13,7 @@
 [Mon Sep 23 23:27:20 2024]List does not exist: attempt to remove an element from a list.
 [Mon Sep 23 23:27:46 2024]List does not exist: attempt to add a new element to the list.
 [Mon Sep 23 23:27:53 2024]The entered number out of range.
+[Tue Sep 24 10:28:40 2024]The entered number out of range.
+[Tue Sep 24 10:51:38 2024]List does not exist: attempt to print list.
+[Tue Sep 24 10:51:45 2024]List does not exist: attempt to remove an element from a list.
+[Tue Sep 24 10:51:58 2024]List does not exist: attempt to check if the list is empty.
