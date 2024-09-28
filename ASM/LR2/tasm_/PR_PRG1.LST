@@ -1,0 +1,67 @@
+Turbo Assembler	 Version 4.1	    09/28/24 17:00:56	    Page 1
+PR_PRG1.ASM
+
+
+
+      1	0000			     .MODEL small
+      2	0000			     .STACK 100h
+      3	0000			     .DATA
+      4				     ;----byte--
+      5	0000  0B 31		     i db 11,49
+      6				     ;--shortint
+      7	0002  CF F5		     is	db -49,-11
+      8	0004  0B 31		     db	11,49
+      9				     ;----word--
+     10	0006  000B 0031		     iw	dw 11,49
+     11	000A  084C		     dw	2124
+     12	000C  0872		     dw	2162
+     13				     ; ----integer----
+     14	000E  F78E		     ii	dw -2162
+     15	0010  F7B4		     dw	-2124
+     16	0012  FFCF		     dw	-49
+     17	0014  FFF5		     dw	-11
+     18	0016  000B		     dw	11
+     19	0018  0031		     dw	49
+     20	001A  084C		     dw	2124
+     21	001C  0872		     dw	2162
+     22				     ;----longint----
+     23	001E  FFFFF78E		     il	dd -2162
+     24	0022  00000872		     dd	2162
+     25				     end
+Turbo Assembler	 Version 4.1	    09/28/24 17:00:56	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "09/28/24"
+??FILENAME			  Text	 "PR_PRG1 "
+??TIME				  Text	 "17:00:56"
+??VERSION			  Number 040A
+@32BIT				  Text	 0
+@CODE				  Text	 _TEXT
+@CODESIZE			  Text	 0
+@CPU				  Text	 0101H
+@CURSEG				  Text	 _DATA
+@DATA				  Text	 DGROUP
+@DATASIZE			  Text	 0
+@FILENAME			  Text	 PR_PRG1
+@INTERFACE			  Text	 000H
+@MODEL				  Text	 2
+@STACK				  Text	 DGROUP
+@WORDSIZE			  Text	 2
+I				  Byte	 DGROUP:0000
+II				  Word	 DGROUP:000E
+IL				  Dword	 DGROUP:001E
+IS				  Byte	 DGROUP:0002
+IW				  Word	 DGROUP:0006
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+DGROUP				  Group
+  STACK				  16  0100 Para	  Stack	  STACK
+  _DATA				  16  0026 Word	  Public  DATA
+_TEXT				  16  0000 Word	  Public  CODE
+
