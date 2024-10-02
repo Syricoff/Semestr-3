@@ -1,0 +1,11 @@
+@startuml Task3: Task3
+
+class Holiday {
+    - holiday_name: str
+    - invited_name: str
+    - invited_count: int
+    + __init__(holiday_name: str, invited_name: str, invited_count: int)
+    + family(): str
+}
+
+@enduml

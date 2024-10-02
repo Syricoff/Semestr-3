@@ -1,0 +1,23 @@
+@startuml Task1: Task
+
+class Parent {
+    - grow: int
+    + __init__(grow: int)
+    + colorEye(): str
+    + changeGrow(change: int): void
+    + printGrow(): void
+}
+
+class Masha {
+    + __init__(grow: int)
+    + colorEye(): str
+}
+
+class Peter {
+    + __init__(grow: int)
+}
+
+Parent <|-- Masha
+Parent <|-- Peter
+
+@enduml

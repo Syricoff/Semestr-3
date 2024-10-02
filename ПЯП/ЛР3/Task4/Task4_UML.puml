@@ -1,0 +1,24 @@
+@startuml Task4
+
+abstract class Person {
+    - full_name: str
+    + __init__(full_name: str)
+    + display_info(): str
+}
+
+class Employee {
+    - position: str
+    + __init__(full_name: str, position: str)
+    + display_info(): str
+}
+
+class Visitor {
+    - age: int
+    + __init__(full_name: str, age: int)
+    + display_info(): str
+}
+
+Person <|-- Employee
+Person <|-- Visitor
+
+@enduml

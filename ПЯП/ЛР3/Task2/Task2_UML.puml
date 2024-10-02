@@ -1,0 +1,35 @@
+@startuml Task2: Task2
+
+abstract class CharacterAbilities {
+    + run(): str
+    + swim(): str
+    + jump(): str
+}
+
+class GameCharacter {
+    - name: str
+    + __init__(name: str)
+    + run(): str
+    + swim(): str
+    + jump(): str
+}
+
+class Warrior {
+    + __init__(name: str)
+    + run(): str
+    + swim(): str
+    + jump(): str
+}
+
+class Mage {
+    + __init__(name: str)
+    + run(): str
+    + swim(): str
+    + jump(): str
+}
+
+CharacterAbilities <|-- GameCharacter
+GameCharacter <|-- Warrior
+GameCharacter <|-- Mage
+
+@enduml
