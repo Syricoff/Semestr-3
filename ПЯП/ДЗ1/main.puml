@@ -1,0 +1,17 @@
+@startuml
+class MainWindow {
+    - plot_button: QPushButton
+    - calculate_button: QPushButton
+    - about_button: QPushButton
+    - product1: QCheckBox
+    - product2: QCheckBox
+    - product3: QCheckBox
+    - label: QLabel
+    - scene: QGraphicsScene
+    - graphics_view: QGraphicsView
+    + __init__()
+    + plot_graph()
+    + calculate_total()
+    + show_info()
+}
+@enduml
