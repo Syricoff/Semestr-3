@@ -4,7 +4,6 @@ project(DoubleListApp)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Укажите все исходные файлы вашего проекта
 set(SOURCES
     main.cpp
     CMenu.cpp

@@ -1,0 +1,888 @@
+# Created by https://www.toptal.com/developers/gitignore/api/pycharm,python,c++,linux,libreoffice,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=pycharm,python,c++,linux,libreoffice,visualstudiocode
+
+### C++ ###
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+### LibreOffice ###
+# LibreOffice locks
+.~lock.*#
+
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+### PyCharm ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# AWS User-specific
+.idea/**/aws.xml
+
+# Generated files
+.idea/**/contentModel.xml
+
+# Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+# Gradle
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# Gradle and Maven with auto-import
+# When using Gradle or Maven with auto-import, you should exclude module files,
+# since they will be recreated, and may cause churn.  Uncomment if using
+# auto-import.
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
+# .idea/modules.xml
+# .idea/*.iml
+# .idea/modules
+# *.iml
+# *.ipr
+
+# CMake
+cmake-build-*/
+
+# Mongo Explorer plugin
+.idea/**/mongoSettings.xml
+
+# File-based project format
+*.iws
+
+# IntelliJ
+out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Cursive Clojure plugin
+.idea/replstate.xml
+
+# SonarLint plugin
+.idea/sonarlint/
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Editor-based Rest Client
+.idea/httpRequests
+
+# Android studio 3.1+ serialized cache file
+.idea/caches/build_file_checksums.ser
+
+### PyCharm Patch ###
+# Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
+
+# *.iml
+# modules.xml
+# .idea/misc.xml
+# *.ipr
+
+# Sonarlint plugin
+# https://plugins.jetbrains.com/plugin/7973-sonarlint
+.idea/**/sonarlint/
+
+# SonarQube Plugin
+# https://plugins.jetbrains.com/plugin/7238-sonarqube-community-plugin
+.idea/**/sonarIssues.xml
+
+# Markdown Navigator plugin
+# https://plugins.jetbrains.com/plugin/7896-markdown-navigator-enhanced
+.idea/**/markdown-navigator.xml
+.idea/**/markdown-navigator-enh.xml
+.idea/**/markdown-navigator/
+
+# Cache file creation bug
+# See https://youtrack.jetbrains.com/issue/JBR-2257
+.idea/$CACHE_FILE$
+
+# CodeStream plugin
+# https://plugins.jetbrains.com/plugin/12206-codestream
+.idea/codestream.xml
+
+# Azure Toolkit for IntelliJ plugin
+# https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij
+.idea/**/azureSettings.xml
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# poetry
+#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+#poetry.lock
+
+# pdm
+#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+#pdm.lock
+#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
+#   in version control.
+#   https://pdm.fming.dev/#use-with-ide
+.pdm.toml
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+#.idea/
+
+### Python Patch ###
+# Poetry local configuration file - https://python-poetry.org/docs/configuration/#local-configuration
+poetry.toml
+
+# ruff
+.ruff_cache/
+
+# LSP config files
+pyrightconfig.json
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/pycharm,python,c++,linux,libreoffice,visualstudiocode
+Семестр2/ВП/.tmp/Cosmodrome/.gitignore
+Семестр2/ВП/.tmp/Cosmodrome/CMakeLists.txt
+Семестр2/ВП/.tmp/Cosmodrome/main.cpp
+Семестр2/ВП/.tmp/Cosmodrome/.idea/.gitignore
+Семестр2/ВП/.tmp/Cosmodrome/.idea/Cosmodrome.iml
+Семестр2/ВП/.tmp/Cosmodrome/.idea/encodings.xml
+Семестр2/ВП/.tmp/Cosmodrome/.idea/misc.xml
+Семестр2/ВП/.tmp/Cosmodrome/.idea/modules.xml
+Семестр2/ВП/.tmp/Cosmodrome/App/App.cpp
+Семестр2/ВП/.tmp/Cosmodrome/App/App.h
+Семестр2/ВП/.tmp/Cosmodrome/App/CMakeLists.txt
+Семестр2/ВП/.tmp/Cosmodrome/ConsoleManager/CMakeLists.txt
+Семестр2/ВП/.tmp/Cosmodrome/ConsoleManager/ConsoleManager.cpp
+Семестр2/ВП/.tmp/Cosmodrome/ConsoleManager/ConsoleManager.h
+Семестр2/ВП/.tmp/Cosmodrome/Db/CMakeLists.txt
+Семестр2/ВП/.tmp/Cosmodrome/Db/Db.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Db/Db.h
+Семестр2/ВП/.tmp/Cosmodrome/Menu/CMakeLists.txt
+Семестр2/ВП/.tmp/Cosmodrome/Menu/ItemMenu.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Menu/ItemMenu.h
+Семестр2/ВП/.tmp/Cosmodrome/Menu/Menu.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Menu/Menu.h
+Семестр2/ВП/.tmp/Cosmodrome/Models/CMakeLists.txt
+Семестр2/ВП/.tmp/Cosmodrome/Models/LaunchTask/LaunchTask.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Models/LaunchTask/LaunchTask.h
+Семестр2/ВП/.tmp/Cosmodrome/Models/Spaceship/Spaceship.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Models/Spaceship/Spaceship.h
+Семестр2/ВП/.tmp/Cosmodrome/Models/User/User.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Models/User/User.h
+Семестр2/ВП/.tmp/Cosmodrome/Screens/CMakeLists.txt
+Семестр2/ВП/.tmp/Cosmodrome/Screens/InterfaceScreen.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Screens/InterfaceScreen.h
+Семестр2/ВП/.tmp/Cosmodrome/Screens/Auth/Auth.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Screens/Auth/Auth.h
+Семестр2/ВП/.tmp/Cosmodrome/Screens/Launch/Launch.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Screens/Launch/Launch.h
+Семестр2/ВП/.tmp/Cosmodrome/Screens/LaunchTaskList/LaunchTaskList.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Screens/LaunchTaskList/LaunchTaskList.h
+Семестр2/ВП/.tmp/Cosmodrome/Screens/Main/Main.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Screens/Main/Main.h
+Семестр2/ВП/.tmp/Cosmodrome/Screens/SpaceshipList/SpaceshipList.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Screens/SpaceshipList/SpaceshipList.h
+Семестр2/ВП/.tmp/Cosmodrome/Screens/UserList/UserList.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Screens/UserList/UserList.h
+Семестр2/ВП/.tmp/Cosmodrome/Store/Action.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Store/Action.h
+Семестр2/ВП/.tmp/Cosmodrome/Store/ActionTypes.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Store/ActionTypes.h
+Семестр2/ВП/.tmp/Cosmodrome/Store/CMakeLists.txt
+Семестр2/ВП/.tmp/Cosmodrome/Store/State.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Store/State.h
+Семестр2/ВП/.tmp/Cosmodrome/Store/Store.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Store/Store.h
+Семестр2/ВП/.tmp/Cosmodrome/consoleUtils/CMakeLists.txt
+Семестр2/ВП/.tmp/Cosmodrome/consoleUtils/consoleUtils.cpp
+Семестр2/ВП/.tmp/Cosmodrome/consoleUtils/consoleUtils.h
+Семестр2/ВП/.tmp/Cosmodrome/global/CMakeLists.txt
+Семестр2/ВП/.tmp/Cosmodrome/global/config.cpp
+Семестр2/ВП/.tmp/Cosmodrome/global/config.h
+Семестр2/ВП/.tmp/hlp/hw/11 вариант.txt
+Семестр2/ВП/.tmp/hlp/hw/МУ_ВП_C++_ДР01.pdf
+Семестр2/ВП/.tmp/hlp/hw/Отчёт.docx
+Семестр2/ВП/.tmp/hlp/hw/Титульник.jpeg
+Семестр2/ВП/.tmp/hlp/hw/block_diagram.vsdx
+Семестр2/ВП/.tmp/hlp/hw/main_save.cpp
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1.sln
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/.vs/home_work_1/v15/.suo
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/.vs/home_work_1/v15/Browse.VC.db
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/.vs/home_work_1/v15/ipch/AutoPCH/41b346acb7af6c04/MAIN.ipch
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/.vs/home_work_1/v15/ipch/AutoPCH/b67ce6c254bf7ba4/MAIN.ipch
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/.vs/home_work_1/v15/ipch/AutoPCH/e1d1c1fdcdc50959/MAIN_SAVE.ipch
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/.vs/home_work_1/v15/ipch/AutoPCH/efc282f781dfc6d2/2_DZ_1.ipch
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/Debug/home_work_1.ilk
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/Debug/home_work_1.pdb
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/Debug/hw.rar
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1/gold.jpg
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1/home_work_1.vcxproj
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1/home_work_1.vcxproj.filters
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1/home_work_1.vcxproj.user
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1/main.cpp
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1/Debug/vc141.idb
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1/Debug/vc141.pdb
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1/Debug/home_work_1.tlog/CL.command.1.tlog
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1/Debug/home_work_1.tlog/CL.read.1.tlog
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1/Debug/home_work_1.tlog/CL.write.1.tlog
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1/Debug/home_work_1.tlog/home_work_1.lastbuildstate
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1/Debug/home_work_1.tlog/link.command.1.tlog
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1/Debug/home_work_1.tlog/link.read.1.tlog
+Семестр2/ВП/.tmp/hlp/hw/home_work_1/home_work_1/Debug/home_work_1.tlog/link.write.1.tlog
+Семестр2/ВП/.tmp/hlp/hw2/Вариант 8.txt
+Семестр2/ВП/.tmp/hlp/hw2/ДР02.pdf
+Семестр2/ВП/.tmp/hlp/hw2/Отчёт.docx
+Семестр2/ВП/.tmp/hlp/hw2/Титульник.jpeg
+Семестр2/ВП/.tmp/hlp/hw2/CMakeLists.txt
+Семестр2/ВП/.tmp/hlp/hw2/main.cpp
+Семестр2/ВП/.tmp/hlp/hw2/.idea/.gitignore
+Семестр2/ВП/.tmp/hlp/hw2/.idea/.name
+Семестр2/ВП/.tmp/hlp/hw2/.idea/hw2.iml
+Семестр2/ВП/.tmp/hlp/hw2/.idea/misc.xml
+Семестр2/ВП/.tmp/hlp/hw2/.idea/modules.xml
+Семестр2/ВП/.tmp/hlp/hw2/.idea/inspectionProfiles/Project_Default.xml
+Семестр2/ВП/.tmp/hlp/hw2/Menu/CMakeLists.txt
+Семестр2/ВП/.tmp/hlp/hw2/Menu/ItemMenu.cpp
+Семестр2/ВП/.tmp/hlp/hw2/Menu/ItemMenu.h
+Семестр2/ВП/.tmp/hlp/hw2/Menu/Menu.cpp
+Семестр2/ВП/.tmp/hlp/hw2/Menu/Menu.h
+Семестр2/ВП/.tmp/hlp/hw2/tasks/CMakeLists.txt
+Семестр2/ВП/.tmp/hlp/hw2/tasks/tasks.cpp
+Семестр2/ВП/.tmp/hlp/hw2/tasks/tasks.h
+Семестр2/ВП/.tmp/hlp/hw2/tasks/Exam/Exam.cpp
+Семестр2/ВП/.tmp/hlp/hw2/tasks/Exam/Exam.h
+Семестр2/ВП/.tmp/hlp/lab1/ВП2_ЛР1.pdf
+Семестр2/ВП/.tmp/hlp/lab1/Отчёт.docx
+Семестр2/ВП/.tmp/hlp/lab1/Титульник.jpeg
+Семестр2/ВП/.tmp/hlp/lab1/block_diagram_1.vsdx
+Семестр2/ВП/.tmp/hlp/lab1/lab1.sln
+Семестр2/ВП/.tmp/hlp/lab1/.vs/lab1/v15/.suo
+Семестр2/ВП/.tmp/hlp/lab1/.vs/lab1/v15/Browse.VC.db
+Семестр2/ВП/.tmp/hlp/lab1/.vs/lab1/v15/ipch/AutoPCH/271f49593c268d98/LAB1.ipch
+Семестр2/ВП/.tmp/hlp/lab1/.vs/lab1/v15/ipch/AutoPCH/286903fdbb8762b5/PRODUCT.ipch
+Семестр2/ВП/.tmp/hlp/lab1/.vs/lab1/v15/ipch/AutoPCH/7d5c1035495485a0/LAB1.ipch
+Семестр2/ВП/.tmp/hlp/lab1/.vs/lab1/v15/ipch/AutoPCH/9597192de762d347/EXAM.ipch
+Семестр2/ВП/.tmp/hlp/lab1/.vs/lab1/v15/ipch/AutoPCH/e37f5d4ec1aae24f/EXAM.ipch
+Семестр2/ВП/.tmp/hlp/lab1/Debug/lab1.ilk
+Семестр2/ВП/.tmp/hlp/lab1/Debug/lab1.pdb
+Семестр2/ВП/.tmp/hlp/lab1/lab1/Exam.cpp
+Семестр2/ВП/.tmp/hlp/lab1/lab1/Exam.h
+Семестр2/ВП/.tmp/hlp/lab1/lab1/lab1.cpp
+Семестр2/ВП/.tmp/hlp/lab1/lab1/lab1.vcxproj
+Семестр2/ВП/.tmp/hlp/lab1/lab1/lab1.vcxproj.filters
+Семестр2/ВП/.tmp/hlp/lab1/lab1/lab1.vcxproj.user
+Семестр2/ВП/.tmp/hlp/lab1/lab1/Debug/vc141.idb
+Семестр2/ВП/.tmp/hlp/lab1/lab1/Debug/vc141.pdb
+Семестр2/ВП/.tmp/hlp/lab1/lab1/Debug/lab1.tlog/CL.command.1.tlog
+Семестр2/ВП/.tmp/hlp/lab1/lab1/Debug/lab1.tlog/CL.read.1.tlog
+Семестр2/ВП/.tmp/hlp/lab1/lab1/Debug/lab1.tlog/CL.write.1.tlog
+Семестр2/ВП/.tmp/hlp/lab1/lab1/Debug/lab1.tlog/lab1.lastbuildstate
+Семестр2/ВП/.tmp/hlp/lab1/lab1/Debug/lab1.tlog/link.command.1.tlog
+Семестр2/ВП/.tmp/hlp/lab1/lab1/Debug/lab1.tlog/link.read.1.tlog
+Семестр2/ВП/.tmp/hlp/lab1/lab1/Debug/lab1.tlog/link.write.1.tlog
+Семестр2/ВП/.tmp/hlp/lab2/ВП2_ЛР2.pdf
+Семестр2/ВП/.tmp/hlp/lab2/Отчёт.docx
+Семестр2/ВП/.tmp/hlp/lab2/Титульник.jpeg
+Семестр2/ВП/.tmp/hlp/lab2/lab_2.rar
+Семестр2/ВП/.tmp/hlp/lab2/lab2.sln
+Семестр2/ВП/.tmp/hlp/lab2/UML_схема_классов.vsdx
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/.suo
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/Browse.VC.db
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/1d6f872f887f7d0b/ABSTRACTITEMMENU.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/1e3d78571a4c7202/TEACHER.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/28cba72853eb585a/HUMAN.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/2a7b6a41aeb98bc/APP.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/2b1f45d8f9980f05/CMENU.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/3c15c8d5c261fbb1/TEACHER.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/3e3f83ce1ba7a449/TEACHER.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/423207f37d9f4c28/SCHOOLCHILD.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/7c7d61d1b09e4d18/OBJECT_EDITING.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/800f0fd1895dc61/SUBJECT.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/83471dd2c391d343/ABSTRACTITEMMENU.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/8b164061c0611e8b/SCHOOLCHILD.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/8d812f92d6c8c9a9/SUBJECT.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/9e11264bd45bfbaa/SUBJECT.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/a6742e96a97eae21/HUMAN.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/b7bab03ff56a5250/TEACHERS_BASE.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/b9be60931dd0107e/CMENU.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/bc796567f8c137b/OBJECT_EDITING.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/c1441796ffcc3cfd/CMENU.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/c206ef5fa8ff05c8/LAB2.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/c774a489e570f750/LAB2.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/c79d2fc69b8b5b42/HUMAN.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/cbdb28b5c5ae8093/TEACHERS_BASE.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/d2391e59ffc8215b/MY_STRING.ipch
+Семестр2/ВП/.tmp/hlp/lab2/.vs/lab2/v15/ipch/AutoPCH/efaac8fbbb3e71e4/APP.ipch
+Семестр2/ВП/.tmp/hlp/lab2/Debug/lab2.ilk
+Семестр2/ВП/.tmp/hlp/lab2/Debug/lab2.pdb
+Семестр2/ВП/.tmp/hlp/lab2/lab2/2021-03-21 17_53_24.png
+Семестр2/ВП/.tmp/hlp/lab2/lab2/AbstractItemMenu.cpp
+Семестр2/ВП/.tmp/hlp/lab2/lab2/AbstractItemMenu.h
+Семестр2/ВП/.tmp/hlp/lab2/lab2/app.cpp
+Семестр2/ВП/.tmp/hlp/lab2/lab2/app.h
+Семестр2/ВП/.tmp/hlp/lab2/lab2/CMenu.cpp
+Семестр2/ВП/.tmp/hlp/lab2/lab2/CMenu.h
+Семестр2/ВП/.tmp/hlp/lab2/lab2/human.cpp
+Семестр2/ВП/.tmp/hlp/lab2/lab2/human.h
+Семестр2/ВП/.tmp/hlp/lab2/lab2/lab2.cpp
+Семестр2/ВП/.tmp/hlp/lab2/lab2/lab2.rar
+Семестр2/ВП/.tmp/hlp/lab2/lab2/lab2.vcxproj
+Семестр2/ВП/.tmp/hlp/lab2/lab2/lab2.vcxproj.filters
+Семестр2/ВП/.tmp/hlp/lab2/lab2/lab2.vcxproj.user
+Семестр2/ВП/.tmp/hlp/lab2/lab2/object_editing.cpp
+Семестр2/ВП/.tmp/hlp/lab2/lab2/object_editing.h
+Семестр2/ВП/.tmp/hlp/lab2/lab2/schoolchild.cpp
+Семестр2/ВП/.tmp/hlp/lab2/lab2/schoolchild.h
+Семестр2/ВП/.tmp/hlp/lab2/lab2/subject.cpp
+Семестр2/ВП/.tmp/hlp/lab2/lab2/subject.h
+Семестр2/ВП/.tmp/hlp/lab2/lab2/teacher.cpp
+Семестр2/ВП/.tmp/hlp/lab2/lab2/teacher.h
+Семестр2/ВП/.tmp/hlp/lab2/lab2/teachers_base.cpp
+Семестр2/ВП/.tmp/hlp/lab2/lab2/teachers_base.h
+Семестр2/ВП/.tmp/hlp/lab2/lab2/teachers_data_base.dat
+Семестр2/ВП/.tmp/hlp/lab2/lab2/Debug/teachers_base.obj.enc
+Семестр2/ВП/.tmp/hlp/lab2/lab2/Debug/vc141.idb
+Семестр2/ВП/.tmp/hlp/lab2/lab2/Debug/vc141.pdb
+Семестр2/ВП/.tmp/hlp/lab2/lab2/Debug/lab2.tlog/CL.command.1.tlog
+Семестр2/ВП/.tmp/hlp/lab2/lab2/Debug/lab2.tlog/CL.read.1.tlog
+Семестр2/ВП/.tmp/hlp/lab2/lab2/Debug/lab2.tlog/CL.write.1.tlog
+Семестр2/ВП/.tmp/hlp/lab2/lab2/Debug/lab2.tlog/lab2.lastbuildstate
+Семестр2/ВП/.tmp/hlp/lab2/lab2/Debug/lab2.tlog/link.command.1.tlog
+Семестр2/ВП/.tmp/hlp/lab2/lab2/Debug/lab2.tlog/link.read.1.tlog
+Семестр2/ВП/.tmp/hlp/lab2/lab2/Debug/lab2.tlog/link.write.1.tlog
+Семестр2/ВП/.tmp/hlp/lab3/ВП2_ЛР3.pdf
+Семестр2/ВП/.tmp/hlp/lab3/Отчёт.docx
+Семестр2/ВП/.tmp/hlp/lab3/Титульник.jpeg
+Семестр2/ВП/.tmp/hlp/lab3/UML.vsdx
+Семестр2/ВП/.tmp/hlp/lab4/ВП2_ЛР4.pdf
+Семестр2/ВП/.tmp/hlp/lab4/Отчёт.docx
+Семестр2/ВП/.tmp/hlp/lab4/Титульник.jpg
+Семестр2/ВП/.tmp/hlp/lab4/clases_diagram.vsdx
+Семестр2/ВП/.tmp/hlp/lab5/ВП2_ЛР5.pdf
+Семестр2/ВП/.tmp/hlp/lab5/Отчёт.docx
+Семестр2/ВП/.tmp/hlp/lab5/Титульник.jpg
+Семестр2/ВП/.tmp/hlp/lab6/ВП2_ЛР6.pdf
+Семестр2/ВП/.tmp/hlp/lab6/Отчёт.docx
+Семестр2/ВП/.tmp/hlp/lab6/Титульник.jpg
+Семестр2/ВП/.tmp/hlp/school_system/CMakeLists.txt
+Семестр2/ВП/.tmp/hlp/school_system/main.cpp
+Семестр2/ВП/.tmp/hlp/school_system/.idea/.gitignore
+Семестр2/ВП/.tmp/hlp/school_system/.idea/encodings.xml
+Семестр2/ВП/.tmp/hlp/school_system/.idea/misc.xml
+Семестр2/ВП/.tmp/hlp/school_system/.idea/modules.xml
+Семестр2/ВП/.tmp/hlp/school_system/.idea/school_system.iml
+Семестр2/ВП/.tmp/hlp/school_system/App/App.cpp
+Семестр2/ВП/.tmp/hlp/school_system/App/App.h
+Семестр2/ВП/.tmp/hlp/school_system/App/CMakeLists.txt
+Семестр2/ВП/.tmp/hlp/school_system/Exception/CMakeLists.txt
+Семестр2/ВП/.tmp/hlp/school_system/Exception/Exception.cpp
+Семестр2/ВП/.tmp/hlp/school_system/Exception/Exception.h
+Семестр2/ВП/.tmp/hlp/school_system/Menu/CMakeLists.txt
+Семестр2/ВП/.tmp/hlp/school_system/Menu/ItemMenu.cpp
+Семестр2/ВП/.tmp/hlp/school_system/Menu/ItemMenu.h
+Семестр2/ВП/.tmp/hlp/school_system/Menu/Menu.cpp
+Семестр2/ВП/.tmp/hlp/school_system/Menu/Menu.h
+Семестр2/ВП/.tmp/hlp/school_system/Models/CMakeLists.txt
+Семестр2/ВП/.tmp/hlp/school_system/Models/Child/Child.cpp
+Семестр2/ВП/.tmp/hlp/school_system/Models/Child/Child.h
+Семестр2/ВП/.tmp/hlp/school_system/Models/Subject/Subject.cpp
+Семестр2/ВП/.tmp/hlp/school_system/Models/Subject/Subject.h
+Семестр2/ВП/.tmp/hlp/school_system/Models/Teacher/Teacher.cpp
+Семестр2/ВП/.tmp/hlp/school_system/Models/Teacher/Teacher.h
+Семестр2/ВП/.tmp/hlp/school_system/Schedule/CMakeLists.txt
+Семестр2/ВП/.tmp/hlp/school_system/Schedule/Schedule.cpp
+Семестр2/ВП/.tmp/hlp/school_system/Schedule/Schedule.h
+Семестр2/ВП/.tmp/hlp/school_system/Screens/CMakeLists.txt
+Семестр2/ВП/.tmp/hlp/school_system/Screens/InterfaceScreen.cpp
+Семестр2/ВП/.tmp/hlp/school_system/Screens/InterfaceScreen.h
+Семестр2/ВП/.tmp/hlp/school_system/Screens/Auth/Auth.cpp
+Семестр2/ВП/.tmp/hlp/school_system/Screens/Auth/Auth.h
+Семестр2/ВП/.tmp/hlp/school_system/Screens/ChildrenList/ChildrenList.cpp
+Семестр2/ВП/.tmp/hlp/school_system/Screens/ChildrenList/ChildrenList.h
+Семестр2/ВП/.tmp/hlp/school_system/Screens/EditSchedule/EditSchedule.cpp
+Семестр2/ВП/.tmp/hlp/school_system/Screens/EditSchedule/EditSchedule.h
+Семестр2/ВП/.tmp/hlp/school_system/Screens/MainChild/MainChild.cpp
+Семестр2/ВП/.tmp/hlp/school_system/Screens/MainChild/MainChild.h
+Семестр2/ВП/.tmp/hlp/school_system/Screens/MainTeacher/MainTeacher.cpp
+Семестр2/ВП/.tmp/hlp/school_system/Screens/MainTeacher/MainTeacher.h
+Семестр2/ВП/.tmp/hlp/school_system/State/Action.cpp
+Семестр2/ВП/.tmp/hlp/school_system/State/Action.h
+Семестр2/ВП/.tmp/hlp/school_system/State/ActionTypes.cpp
+Семестр2/ВП/.tmp/hlp/school_system/State/ActionTypes.h
+Семестр2/ВП/.tmp/hlp/school_system/State/CMakeLists.txt
+Семестр2/ВП/.tmp/hlp/school_system/State/State.cpp
+Семестр2/ВП/.tmp/hlp/school_system/State/State.h
+Семестр2/ВП/.tmp/hlp/school_system/State/Store.cpp
+Семестр2/ВП/.tmp/hlp/school_system/State/Store.h
+Семестр2/ВП/.tmp/hlp/school_system/consoleUtils/CMakeLists.txt
+Семестр2/ВП/.tmp/hlp/school_system/consoleUtils/consoleUtils.cpp
+Семестр2/ВП/.tmp/hlp/school_system/consoleUtils/consoleUtils.h
+
+.fake
+Семестр2/ОП/tmp/cmake_install.cmake
+Семестр2/ОП/tmp/CMakeCache.txt
+Семестр2/ОП/tmp/db.bin
+Семестр2/ОП/tmp/Makefile
+Семестр2/ОП/tmp/OP
+Семестр2/ОП/tmp/App/cmake_install.cmake
+Семестр2/ОП/tmp/App/Makefile
+Семестр2/ОП/tmp/App/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ОП/tmp/App/CMakeFiles/progress.marks
+Семестр2/ОП/tmp/App/CMakeFiles/App.dir/build.make
+Семестр2/ОП/tmp/App/CMakeFiles/App.dir/cmake_clean_target.cmake
+Семестр2/ОП/tmp/App/CMakeFiles/App.dir/cmake_clean.cmake
+Семестр2/ОП/tmp/App/CMakeFiles/App.dir/compiler_depend.internal
+Семестр2/ОП/tmp/App/CMakeFiles/App.dir/compiler_depend.make
+Семестр2/ОП/tmp/App/CMakeFiles/App.dir/compiler_depend.ts
+Семестр2/ОП/tmp/App/CMakeFiles/App.dir/depend.make
+Семестр2/ОП/tmp/App/CMakeFiles/App.dir/DependInfo.cmake
+Семестр2/ОП/tmp/App/CMakeFiles/App.dir/flags.make
+Семестр2/ОП/tmp/App/CMakeFiles/App.dir/link.txt
+Семестр2/ОП/tmp/App/CMakeFiles/App.dir/progress.make
+Семестр2/ОП/tmp/CMakeFiles/cmake.check_cache
+Семестр2/ОП/tmp/CMakeFiles/CMakeConfigureLog.yaml
+Семестр2/ОП/tmp/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ОП/tmp/CMakeFiles/Makefile.cmake
+Семестр2/ОП/tmp/CMakeFiles/Makefile2
+Семестр2/ОП/tmp/CMakeFiles/progress.marks
+Семестр2/ОП/tmp/CMakeFiles/TargetDirectories.txt
+Семестр2/ОП/tmp/CMakeFiles/3.27.7/CMakeCCompiler.cmake
+Семестр2/ОП/tmp/CMakeFiles/3.27.7/CMakeCXXCompiler.cmake
+Семестр2/ОП/tmp/CMakeFiles/3.27.7/CMakeDetermineCompilerABI_C.bin
+Семестр2/ОП/tmp/CMakeFiles/3.27.7/CMakeDetermineCompilerABI_CXX.bin
+Семестр2/ОП/tmp/CMakeFiles/3.27.7/CMakeSystem.cmake
+Семестр2/ОП/tmp/CMakeFiles/3.27.7/CompilerIdC/CMakeCCompilerId.c
+Семестр2/ОП/tmp/CMakeFiles/3.27.7/CompilerIdCXX/CMakeCXXCompilerId.cpp
+Семестр2/ОП/tmp/CMakeFiles/OP.dir/build.make
+Семестр2/ОП/tmp/CMakeFiles/OP.dir/cmake_clean.cmake
+Семестр2/ОП/tmp/CMakeFiles/OP.dir/compiler_depend.internal
+Семестр2/ОП/tmp/CMakeFiles/OP.dir/compiler_depend.make
+Семестр2/ОП/tmp/CMakeFiles/OP.dir/compiler_depend.ts
+Семестр2/ОП/tmp/CMakeFiles/OP.dir/depend.make
+Семестр2/ОП/tmp/CMakeFiles/OP.dir/DependInfo.cmake
+Семестр2/ОП/tmp/CMakeFiles/OP.dir/flags.make
+Семестр2/ОП/tmp/CMakeFiles/OP.dir/link.txt
+Семестр2/ОП/tmp/CMakeFiles/OP.dir/progress.make
+Семестр2/ОП/tmp/Menu/cmake_install.cmake
+Семестр2/ОП/tmp/Menu/Makefile
+Семестр2/ОП/tmp/Menu/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ОП/tmp/Menu/CMakeFiles/progress.marks
+Семестр2/ОП/tmp/Menu/CMakeFiles/Menu.dir/build.make
+Семестр2/ОП/tmp/Menu/CMakeFiles/Menu.dir/cmake_clean_target.cmake
+Семестр2/ОП/tmp/Menu/CMakeFiles/Menu.dir/cmake_clean.cmake
+Семестр2/ОП/tmp/Menu/CMakeFiles/Menu.dir/compiler_depend.internal
+Семестр2/ОП/tmp/Menu/CMakeFiles/Menu.dir/compiler_depend.make
+Семестр2/ОП/tmp/Menu/CMakeFiles/Menu.dir/compiler_depend.ts
+Семестр2/ОП/tmp/Menu/CMakeFiles/Menu.dir/depend.make
+Семестр2/ОП/tmp/Menu/CMakeFiles/Menu.dir/DependInfo.cmake
+Семестр2/ОП/tmp/Menu/CMakeFiles/Menu.dir/flags.make
+Семестр2/ОП/tmp/Menu/CMakeFiles/Menu.dir/link.txt
+Семестр2/ОП/tmp/Menu/CMakeFiles/Menu.dir/progress.make
+Семестр2/ОП/tmp/Models/cmake_install.cmake
+Семестр2/ОП/tmp/Models/Makefile
+Семестр2/ОП/tmp/Models/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ОП/tmp/Models/CMakeFiles/progress.marks
+Семестр2/ОП/tmp/Models/CMakeFiles/Models.dir/build.make
+Семестр2/ОП/tmp/Models/CMakeFiles/Models.dir/cmake_clean_target.cmake
+Семестр2/ОП/tmp/Models/CMakeFiles/Models.dir/cmake_clean.cmake
+Семестр2/ОП/tmp/Models/CMakeFiles/Models.dir/compiler_depend.internal
+Семестр2/ОП/tmp/Models/CMakeFiles/Models.dir/compiler_depend.make
+Семестр2/ОП/tmp/Models/CMakeFiles/Models.dir/compiler_depend.ts
+Семестр2/ОП/tmp/Models/CMakeFiles/Models.dir/depend.make
+Семестр2/ОП/tmp/Models/CMakeFiles/Models.dir/DependInfo.cmake
+Семестр2/ОП/tmp/Models/CMakeFiles/Models.dir/flags.make
+Семестр2/ОП/tmp/Models/CMakeFiles/Models.dir/link.txt
+Семестр2/ОП/tmp/Models/CMakeFiles/Models.dir/progress.make
+Семестр2/ОП/tmp/Tools/cmake_install.cmake
+Семестр2/ОП/tmp/Tools/Makefile
+Семестр2/ОП/tmp/Tools/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ОП/tmp/Tools/CMakeFiles/progress.marks
+Семестр2/ОП/tmp/Tools/CMakeFiles/Tools.dir/build.make
+Семестр2/ОП/tmp/Tools/CMakeFiles/Tools.dir/cmake_clean_target.cmake
+Семестр2/ОП/tmp/Tools/CMakeFiles/Tools.dir/cmake_clean.cmake
+Семестр2/ОП/tmp/Tools/CMakeFiles/Tools.dir/compiler_depend.internal
+Семестр2/ОП/tmp/Tools/CMakeFiles/Tools.dir/compiler_depend.make
+Семестр2/ОП/tmp/Tools/CMakeFiles/Tools.dir/compiler_depend.ts
+Семестр2/ОП/tmp/Tools/CMakeFiles/Tools.dir/depend.make
+Семестр2/ОП/tmp/Tools/CMakeFiles/Tools.dir/DependInfo.cmake
+Семестр2/ОП/tmp/Tools/CMakeFiles/Tools.dir/flags.make
+Семестр2/ОП/tmp/Tools/CMakeFiles/Tools.dir/link.txt
+Семестр2/ОП/tmp/Tools/CMakeFiles/Tools.dir/progress.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/cmake_install.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeCache.txt
+Семестр2/ВП/.tmp/Cosmodrome/Build/Cosmodrome
+Семестр2/ВП/.tmp/Cosmodrome/Build/Makefile
+Семестр2/ВП/.tmp/Cosmodrome/Build/App/cmake_install.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/App/Makefile
+Семестр2/ВП/.tmp/Cosmodrome/Build/App/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/App/CMakeFiles/progress.marks
+Семестр2/ВП/.tmp/Cosmodrome/Build/App/CMakeFiles/App.dir/build.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/App/CMakeFiles/App.dir/cmake_clean_target.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/App/CMakeFiles/App.dir/cmake_clean.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/App/CMakeFiles/App.dir/compiler_depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/App/CMakeFiles/App.dir/compiler_depend.ts
+Семестр2/ВП/.tmp/Cosmodrome/Build/App/CMakeFiles/App.dir/depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/App/CMakeFiles/App.dir/DependInfo.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/App/CMakeFiles/App.dir/flags.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/App/CMakeFiles/App.dir/link.txt
+Семестр2/ВП/.tmp/Cosmodrome/Build/App/CMakeFiles/App.dir/progress.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/cmake.check_cache
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/CMakeConfigureLog.yaml
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/Makefile.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/Makefile2
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/progress.marks
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/TargetDirectories.txt
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/3.27.7/CMakeCCompiler.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/3.27.7/CMakeCXXCompiler.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/3.27.7/CMakeDetermineCompilerABI_C.bin
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/3.27.7/CMakeDetermineCompilerABI_CXX.bin
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/3.27.7/CMakeSystem.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/3.27.7/CompilerIdC/CMakeCCompilerId.c
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/3.27.7/CompilerIdCXX/CMakeCXXCompilerId.cpp
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/Cosmodrome.dir/build.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/Cosmodrome.dir/cmake_clean.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/Cosmodrome.dir/compiler_depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/Cosmodrome.dir/compiler_depend.ts
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/Cosmodrome.dir/depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/Cosmodrome.dir/DependInfo.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/Cosmodrome.dir/flags.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/Cosmodrome.dir/link.txt
+Семестр2/ВП/.tmp/Cosmodrome/Build/CMakeFiles/Cosmodrome.dir/progress.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/cmake_install.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/Makefile
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/CMakeFiles/progress.marks
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/CMakeFiles/CM.dir/build.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/CMakeFiles/CM.dir/cmake_clean_target.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/CMakeFiles/CM.dir/cmake_clean.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/CMakeFiles/CM.dir/compiler_depend.internal
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/CMakeFiles/CM.dir/compiler_depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/CMakeFiles/CM.dir/compiler_depend.ts
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/CMakeFiles/CM.dir/depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/CMakeFiles/CM.dir/DependInfo.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/CMakeFiles/CM.dir/flags.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/CMakeFiles/CM.dir/link.txt
+Семестр2/ВП/.tmp/Cosmodrome/Build/ConsoleManager/CMakeFiles/CM.dir/progress.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/cmake_install.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/Makefile
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/CMakeFiles/progress.marks
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/CMakeFiles/Db.dir/build.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/CMakeFiles/Db.dir/cmake_clean_target.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/CMakeFiles/Db.dir/cmake_clean.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/CMakeFiles/Db.dir/compiler_depend.internal
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/CMakeFiles/Db.dir/compiler_depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/CMakeFiles/Db.dir/compiler_depend.ts
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/CMakeFiles/Db.dir/depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/CMakeFiles/Db.dir/DependInfo.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/CMakeFiles/Db.dir/flags.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/CMakeFiles/Db.dir/link.txt
+Семестр2/ВП/.tmp/Cosmodrome/Build/Db/CMakeFiles/Db.dir/progress.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/cmake_install.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/Makefile
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/CMakeFiles/progress.marks
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/CMakeFiles/Menu.dir/build.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/CMakeFiles/Menu.dir/cmake_clean_target.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/CMakeFiles/Menu.dir/cmake_clean.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/CMakeFiles/Menu.dir/compiler_depend.internal
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/CMakeFiles/Menu.dir/compiler_depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/CMakeFiles/Menu.dir/compiler_depend.ts
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/CMakeFiles/Menu.dir/depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/CMakeFiles/Menu.dir/DependInfo.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/CMakeFiles/Menu.dir/flags.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/CMakeFiles/Menu.dir/link.txt
+Семестр2/ВП/.tmp/Cosmodrome/Build/Menu/CMakeFiles/Menu.dir/progress.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/cmake_install.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/Makefile
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/CMakeFiles/progress.marks
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/CMakeFiles/Models.dir/build.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/CMakeFiles/Models.dir/cmake_clean_target.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/CMakeFiles/Models.dir/cmake_clean.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/CMakeFiles/Models.dir/compiler_depend.internal
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/CMakeFiles/Models.dir/compiler_depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/CMakeFiles/Models.dir/compiler_depend.ts
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/CMakeFiles/Models.dir/depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/CMakeFiles/Models.dir/DependInfo.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/CMakeFiles/Models.dir/flags.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/CMakeFiles/Models.dir/link.txt
+Семестр2/ВП/.tmp/Cosmodrome/Build/Models/CMakeFiles/Models.dir/progress.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Screens/cmake_install.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Screens/Makefile
+Семестр2/ВП/.tmp/Cosmodrome/Build/Screens/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Screens/CMakeFiles/progress.marks
+Семестр2/ВП/.tmp/Cosmodrome/Build/Screens/CMakeFiles/Screen.dir/build.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Screens/CMakeFiles/Screen.dir/cmake_clean_target.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Screens/CMakeFiles/Screen.dir/cmake_clean.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Screens/CMakeFiles/Screen.dir/compiler_depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Screens/CMakeFiles/Screen.dir/compiler_depend.ts
+Семестр2/ВП/.tmp/Cosmodrome/Build/Screens/CMakeFiles/Screen.dir/depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Screens/CMakeFiles/Screen.dir/DependInfo.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Screens/CMakeFiles/Screen.dir/flags.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Screens/CMakeFiles/Screen.dir/link.txt
+Семестр2/ВП/.tmp/Cosmodrome/Build/Screens/CMakeFiles/Screen.dir/progress.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/cmake_install.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/Makefile
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/CMakeFiles/progress.marks
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/CMakeFiles/Store.dir/build.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/CMakeFiles/Store.dir/cmake_clean_target.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/CMakeFiles/Store.dir/cmake_clean.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/CMakeFiles/Store.dir/compiler_depend.internal
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/CMakeFiles/Store.dir/compiler_depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/CMakeFiles/Store.dir/compiler_depend.ts
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/CMakeFiles/Store.dir/depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/CMakeFiles/Store.dir/DependInfo.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/CMakeFiles/Store.dir/flags.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/CMakeFiles/Store.dir/link.txt
+Семестр2/ВП/.tmp/Cosmodrome/Build/Store/CMakeFiles/Store.dir/progress.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/cmake_install.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/Makefile
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/CMakeFiles/progress.marks
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/CMakeFiles/cUtils.dir/build.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/CMakeFiles/cUtils.dir/cmake_clean_target.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/CMakeFiles/cUtils.dir/cmake_clean.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/CMakeFiles/cUtils.dir/compiler_depend.internal
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/CMakeFiles/cUtils.dir/compiler_depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/CMakeFiles/cUtils.dir/compiler_depend.ts
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/CMakeFiles/cUtils.dir/depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/CMakeFiles/cUtils.dir/DependInfo.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/CMakeFiles/cUtils.dir/flags.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/CMakeFiles/cUtils.dir/link.txt
+Семестр2/ВП/.tmp/Cosmodrome/Build/consoleUtils/CMakeFiles/cUtils.dir/progress.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/cmake_install.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/Makefile
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/CMakeFiles/CMakeDirectoryInformation.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/CMakeFiles/progress.marks
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/CMakeFiles/Global.dir/build.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/CMakeFiles/Global.dir/cmake_clean_target.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/CMakeFiles/Global.dir/cmake_clean.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/CMakeFiles/Global.dir/compiler_depend.internal
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/CMakeFiles/Global.dir/compiler_depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/CMakeFiles/Global.dir/compiler_depend.ts
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/CMakeFiles/Global.dir/depend.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/CMakeFiles/Global.dir/DependInfo.cmake
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/CMakeFiles/Global.dir/flags.make
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/CMakeFiles/Global.dir/link.txt
+Семестр2/ВП/.tmp/Cosmodrome/Build/global/CMakeFiles/Global.dir/progress.make
