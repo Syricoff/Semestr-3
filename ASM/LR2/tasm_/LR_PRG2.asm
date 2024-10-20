@@ -18,6 +18,8 @@ title prog4             ; LR_2, Surikov, IUK4
           mov  ax, @data         ; Инициализировать
           mov  ds, ax            ; сегментный регистр ds
 
+          xor  ax, ax            ; Очистка ригистра ax
+
           mov  di, year          ; Переместить значение переменной year в регистр DI
           mov  al, day           ; Переместить значение переменной day в регистр al
           mov  cx, month         ; Переместить значение переменной month в регистр cx
