@@ -1,0 +1,19 @@
+@startuml
+class FileChecksumCalculator {
+    - file_path: str
+    - checksum: int
+    + __init__(file_path: str)
+    + calculate_checksum(): void
+}
+
+class ChecksumManager {
+    - threads: List[Tuple[Thread, FileChecksumCalculator]]
+    - checksums: List[int]
+    + __init__()
+    + add_task(calculator: FileChecksumCalculator): void
+    + run_calculator(calculator: FileChecksumCalculator): void
+    + wait_for_completion(): void
+}
+
+FileChecksumCalculator --> ChecksumManager : used by
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+class Buffer {
+    - size: int
+    - buffer: List[int]
+    - condition: Condition
+    + __init__(size: int)
+    + produce(item: int): void
+    + consume(): int
+}
+
+class Producer {
+    - buffer: Buffer
+    + __init__(buffer: Buffer)
+    + run(): void
+}
+
+class Consumer {
+    - buffer: Buffer
+    + __init__(buffer: Buffer)
+    + run(): void
+}
+
+Producer --> Buffer : uses
+Consumer --> Buffer : uses
+@enduml
