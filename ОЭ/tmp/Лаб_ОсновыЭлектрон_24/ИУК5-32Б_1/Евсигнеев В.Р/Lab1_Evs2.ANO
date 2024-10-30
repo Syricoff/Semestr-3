@@ -1,0 +1,77 @@
+********************************************************************************
+***                       Micro-Cap 12.2.0.5 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                         AC Analysis of Lab1_Evs2                         ***
+***                            09.08.2005 2:58:45                            ***
+********************************************************************************
+Limits
+======
+Frequency Range          Log 1E8,1Meg
+Number of Points         1001
+Temperature              Linear 27
+Maximum Change %         5
+Noise Input              NONE
+Noise Output             2
+Run Options              Normal
+State Variables          Zero
+Operating Point          On
+Auto Scale Ranges        On
+Accumulate Plots         Off
+Ignore Expression Errors Off
+
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1           -11.621   2            20.473   3           135.186m 
+4           473.152m  5            10.000   6            38.379  
+7            38.378  
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:                R1            R2            R3            R4            R5
+V                  -32.094      -337.966m     -135.186m       -9.527        17.906 
+Power DC Terms:
+PD                  68.670         2.284m      913.766u        9.076        21.374 
+
+DC Pin Currents:
+Ir                  -2.140        -6.759m       -6.759m     -952.685m        1.194 
+
+Device Variables:
+tc1                  0.000         0.000         0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000         0.000         0.000 
+
+
+Instance:                R6      METER2.R
+V                   28.378       945.925u
+Power DC Terms:
+PD                  26.843       894.775u
+
+DC Pin Currents:
+Ir                 945.925m      945.925m
+
+Device Variables:
+tc1                  0.000         0.000 
+tc2                  0.000         0.000 
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:               V1            V2            V3      METER2.V
+V                  20.000        50.000        10.000         0.000 
+Power DC Terms:
+PG                 18.919       106.981        67.593m        0.000 
+
+DC Pin Currents:
+ISource          -945.925m       -2.140        -6.759m      945.925m
+
+

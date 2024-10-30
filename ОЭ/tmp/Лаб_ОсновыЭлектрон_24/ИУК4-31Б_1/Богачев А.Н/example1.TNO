@@ -1,0 +1,124 @@
+********************************************************************************
+***                       Micro-Cap 12.2.0.5 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                      Transient Analysis of example1                      ***
+***                           10.10.2024 15:32:08                            ***
+********************************************************************************
+Limits
+======
+Maximum Run Time           1u
+Output Start Time (tstart) 0
+Maximum Time Step          0
+Number of Points           51
+Temperature                Linear 27
+Retrace Runs               1
+Run Options                Normal
+State Variables            Zero
+Operating Point            On
+Operating Point Only       Off
+Auto Scale Ranges          On
+Accumulate Plots           Off
+Fixed Time Step            Off
+Periodic Steady State      Off
+Ignore Expression Errors   Off
+
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1             9.999   2          -999.700u  3            29.998  
+4            -2.000m  5            29.999   6             9.999  
+7             2.000m  8            29.998  
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:                R1            R3            R4            R5    SWITCH3.R1
+V                   -9.997        29.996       -19.999        29.998       999.940u
+Power DC Terms:
+PD                   9.994        29.992        19.998        29.996       999.880u
+
+DC Pin Currents:
+Ir                -999.700m      999.867m     -999.940m      999.940m      999.940m
+
+Device Variables:
+tc1                  0.000         0.000         0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000         0.000         0.000 
+
+
+Instance:        SWITCH3.R2    SWITCH3.R3    SWITCH3.R4    SWITCH3.R5    SWITCH2.R1
+V                  -19.999        29.999         9.999        29.998        -2.000m
+Power DC Terms:
+PD                 399.960f      899.952p       99.984p      899.892p        3.999m
+
+DC Pin Currents:
+Ir                 -19.999f       29.999p        9.999p       29.998p       -2.000 
+
+Device Variables:
+tc1                  0.000         0.000         0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000         0.000         0.000 
+
+
+Instance:        SWITCH2.R2    SWITCH2.R3    SWITCH2.R4    SWITCH2.R5    SWITCH1.R1
+V                   29.998        -2.000m       29.998         0.000      -999.700u
+Power DC Terms:
+PD                 899.880f        0.004f      899.880p        0.000       999.400u
+
+DC Pin Currents:
+Ir                  29.998f       -2.000f       29.998p        0.000      -999.700m
+
+Device Variables:
+tc1                  0.000         0.000         0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000         0.000         0.000 
+
+
+Instance:        SWITCH1.R2    SWITCH1.R3    SWITCH1.R4    SWITCH1.R5      METER7.R
+V                    9.999      -999.700u        9.999         0.000         2.000m
+Power DC Terms:
+PD                  99.980f        0.001f       99.980p        0.000         3.998m
+
+DC Pin Currents:
+Ir                   9.999f       -1.000f        9.999p        0.000         2.000 
+
+Device Variables:
+tc1                  0.000         0.000         0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000         0.000         0.000 
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:               V1            V2            V3    SWITCH3.V1    SWITCH3.V2
+V                  10.000        30.000        20.000         0.000         0.000 
+Power DC Terms:
+PG                  9.997        59.994        19.999         0.000         0.000 
+
+DC Pin Currents:
+ISource          -999.700m       -2.000      -999.940m      999.940m       13.051p
+
+
+Instance:       SWITCH3.V3    SWITCH2.V1    SWITCH2.V2    SWITCH2.V3    SWITCH1.V1
+V                   0.000         0.000         0.000         0.000         0.000 
+Power DC Terms:
+PG                  0.000         0.000         0.000         0.000         0.000 
+
+DC Pin Currents:
+ISource          -999.940m       -2.000        30.028p        2.000      -999.700m
+
+
+Instance:       SWITCH1.V2    SWITCH1.V3      METER7.V
+V                   0.000         0.000         0.000 
+Power DC Terms:
+PG                  0.000         0.000         0.000 
+
+DC Pin Currents:
+ISource            10.009p      999.700m        2.000 
+
+

@@ -1,0 +1,61 @@
+********************************************************************************
+***                       Micro-Cap 12.2.0.5 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                        Dynamic DC of lab_example                         ***
+***                           11.09.2024 13:15:21                            ***
+********************************************************************************
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1            10.000   2            12.000   3            30.000  
+4            10.000   5            30.000   6            29.999  
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:                R1            R2            R3            R4            R5
+V                    2.000       -12.000        18.000       -20.000        29.999 
+Power DC Terms:
+PD                 400.000m        4.800        10.800        19.999        29.999 
+
+DC Pin Currents:
+Ir                 200.000m     -400.000m      600.000m     -999.980m      999.980m
+
+Device Variables:
+tc1                  0.000         0.000         0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000         0.000         0.000 
+
+
+Instance:          METER1.R
+V                  999.980u
+Power DC Terms:
+PD                 999.960u
+
+DC Pin Currents:
+Ir                 999.980m
+
+Device Variables:
+tc1                  0.000 
+tc2                  0.000 
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:               V1            V2            V3      METER1.V
+V                  10.000        30.000        20.000         0.000 
+Power DC Terms:
+PG                 -2.000        47.999        20.000         0.000 
+
+DC Pin Currents:
+ISource           200.000m       -1.600      -999.980m      999.980m
+
+

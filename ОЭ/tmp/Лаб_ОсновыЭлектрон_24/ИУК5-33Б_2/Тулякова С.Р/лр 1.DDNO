@@ -1,0 +1,61 @@
+********************************************************************************
+***                       Micro-Cap 12.2.0.5 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                            Dynamic DC of λπ 1                            ***
+***                            04.08.2005 4:21:07                            ***
+********************************************************************************
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1          -111.104u  2          -111.104u  3           222.207u 
+4            10.000  
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:                 R1             R3             R5       METER1.R
+V                    -0.444f       -10.000       -222.207u       333.311u
+Power DC Terms:
+PD                1.973E-032         3.333          2.469n       111.096u
+
+DC Pin Currents:
+Ir                   -0.044f      -333.322m       -11.110u       333.311m
+
+Device Variables:
+tc1                   0.000          0.000          0.000          0.000 
+tc2                   0.000          0.000          0.000          0.000 
+
+
+Instance:                 R6
+V                  -111.104u
+Power DC Terms:
+PD                    1.234n
+
+DC Pin Currents:
+Ir                  -11.110u
+
+Device Variables:
+tc1                   0.000 
+tc2                   0.000 
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:                V1             V2       METER1.V
+V                   10.000         10.000          0.000 
+Power DC Terms:
+PG                   3.333     -5.555E-053         0.000 
+
+DC Pin Currents:
+ISource           -333.322m     5.555E-054       333.311m
+
+

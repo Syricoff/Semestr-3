@@ -1,0 +1,62 @@
+********************************************************************************
+***                       Micro-Cap 12.2.0.5 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                         Dynamic AC of Lab1_Evs2                          ***
+***                            09.08.2005 4:31:42                            ***
+********************************************************************************
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+AC Voltages at Frequency=1e+006 (Mag, Degrees)
+==============================================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1                  0  2                  0  3                  0 
+4                  0  5                  0  6                  0 
+7                  0 
+
+
+AC values for Resistor (Mag, Degrees)
+=====================================
+Instance:                R1            R2            R3            R4            R5
+
+Power AC Terms:
+PD                        0             0             0             0             0
+
+AC Pin Currents:
+Ir                        0             0             0             0             0
+
+Device Variables:
+tc1                  0.000         0.000         0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000         0.000         0.000 
+
+
+Instance:                R6      METER2.R
+
+Power AC Terms:
+PD                        0             0
+
+AC Pin Currents:
+Ir                        0             0
+
+Device Variables:
+tc1                  0.000         0.000 
+tc2                  0.000         0.000 
+
+
+
+AC values for SPICE Source (Mag, Degrees)
+=========================================
+Instance:               V1            V2            V3      METER2.V
+
+Power AC Terms:
+PG                       0             0             0             0
+
+AC Pin Currents:
+ISource                  0             0             0             0
+
+
