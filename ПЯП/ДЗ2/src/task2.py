@@ -120,6 +120,7 @@ class CarManager:
                         "owner": car.find("owner").text,
                     }
                 )
+        # with open()
 
         return owner_cars
 

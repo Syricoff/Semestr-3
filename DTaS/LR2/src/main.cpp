@@ -7,13 +7,12 @@
 #include <fstream>
 #include <iostream>
  
-// TODO: Поработать над работой меню, проверить парвильность добавления и вывода значений, глянуть как работает вывод по рядам
 
 std::string ExpressionTree::MyError::m_file = std::string();
 
 using namespace ExpressionTree;
 
-BinTree tree; // Переименованный класс
+BinTree tree;
 int argc2;
 char **argv2;
 
@@ -22,7 +21,7 @@ int PrintTree()
 {
     СlearScreen();
     if (!tree.IsEmpty())
-    { // Использование функции проверки на пустоту
+    {
         tree.PrintTree();
     }
     else
@@ -37,7 +36,7 @@ int PrintLevelOrder()
 {
     СlearScreen();
     if (!tree.IsEmpty())
-    { // Использование функции проверки на пустоту
+    {
         tree.LevelOrderTraversal();
     }
     else
@@ -52,7 +51,7 @@ int ClearTree()
 {
     СlearScreen();
     if (!tree.IsEmpty())
-    { // Использование функции проверки на пустоту
+    {
         tree.Clear();
         std::cout << "Дерево успешно удалено.\n";
     }
@@ -68,7 +67,7 @@ int RemoveNegative()
 {
     СlearScreen();
     if (!tree.IsEmpty())
-    { // Использование функции проверки на пустоту
+    {
         tree.RemoveNegative();
         std::cout << "Отрицательные элементы удалены.\n";
     }
@@ -129,7 +128,7 @@ void ReadFile(const std::string &nameFile = "input.txt")
 
     if (!tree.IsEmpty())
     {
-        tree.Clear(); // Очистка дерева перед загрузкой новых данных
+        tree.Clear();
     }
 
     if (!in.is_open())
@@ -162,13 +161,11 @@ int main(int argc, char *argv[])
         if (argc >= 2)
         {
             ReadFile(argv[1]);
-            WaitForEnter();
         }
         else
         {
             ReadFile();
             std::cout << "Используются файлы по умолчанию input.txt, output.txt, exceptions.txt\n";
-            WaitForEnter();
         }
     }
     catch (const MyError &exception)

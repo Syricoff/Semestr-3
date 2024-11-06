@@ -31,19 +31,26 @@ namespace ExpressionTree
 			std::cout << "Дерево пустое\n";
 			return;
 		}
+
 		std::queue<Node *> q;
 		q.push(root);
+
 		while (!q.empty())
 		{
-			Node *node = q.front();
-			q.pop();
-			std::cout << node->data << " ";
-			if (node->left)
-				q.push(node->left);
-			if (node->right)
-				q.push(node->right);
+			int levelSize = q.size(); // Количество узлов на текущем уровне
+			for (int i = 0; i < levelSize; ++i)
+			{
+				Node *node = q.front();
+				q.pop();
+				std::cout << node->data << " "; // Вывод данных узла
+
+				if (node->left)
+					q.push(node->left);
+				if (node->right)
+					q.push(node->right);
+			}
+			std::cout << std::endl;
 		}
-		std::cout << std::endl;
 	}
 
 	void BinTree::RemoveNegative()
