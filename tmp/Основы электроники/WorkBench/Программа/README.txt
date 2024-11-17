@@ -1,1 +1,0 @@
-Для запуска программы Electronics Workbench необходимо в папке EWB5PRO запустить файл "wewb32.exe".

@@ -18,9 +18,24 @@ class CarManager:
     def add_test_data(self, root):
         """Добавляет тестовые данные о автомобилях."""
         test_cars = [
-            {"license_plate": "A123BC", "brand": "Toyota", "color": "Red", "owner": "Ivanov Ivan"},
-            {"license_plate": "B456CD", "brand": "BMW", "color": "Black", "owner": "Petrov Petr"},
-            {"license_plate": "C789EF", "brand": "Audi", "color": "Blue", "owner": "Sidorov Sidor"},
+            {
+                "license_plate": "A123BC",
+                "brand": "Toyota",
+                "color": "Red",
+                "owner": "Ivanov Ivan",
+            },
+            {
+                "license_plate": "B456CD",
+                "brand": "BMW",
+                "color": "Black",
+                "owner": "Petrov Petr",
+            },
+            {
+                "license_plate": "C789EF",
+                "brand": "Audi",
+                "color": "Blue",
+                "owner": "Sidorov Sidor",
+            },
         ]
 
         for car in test_cars:
@@ -120,7 +135,9 @@ class CarManager:
                         "owner": car.find("owner").text,
                     }
                 )
-        # with open()
+
+        with open("output.txt", "w") as output:
+            output.write("\n".join([str(car) for car in owner_cars]))
 
         return owner_cars
 
@@ -167,7 +184,7 @@ class Menu:
 
 
 def main():
-    car_manager = CarManager("cars.xml") 
+    car_manager = CarManager("cars.xml")
     menu = Menu()
 
     # Добавляем пункты меню

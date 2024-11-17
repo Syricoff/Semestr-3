@@ -49,7 +49,7 @@ class Consumer(threading.Thread):
     def run(self):
         for _ in range(9):
             item = self.buffer.consume()
-            time.sleep(random.uniform(0.4, 0.7))
+            time.sleep(random.uniform(a=0.4, 0.7))
 
 
 if __name__ == "__main__":
