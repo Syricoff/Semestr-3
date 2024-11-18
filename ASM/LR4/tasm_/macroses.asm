@@ -1,52 +1,3 @@
-; Макрос для вычисления y = 2*b + 2*a
-mCalc_Y1 MACRO a, b
-             push bx        ; Данные в стек
-             push cx
-             push dx
-
-             mov  ax, a     ; загрузить a в ax
-             mov  bx, b     ; загрузить b в bx
-             shl  ax, 1     ; ax = 2*a
-             shl  bx, 1     ; bx = 2*b
-             add  ax, bx    ; ax = 2*a + 2*b
-
-             pop  dx
-             pop  cx
-             pop  bx
-ENDM
-
-; Макрос для вычисления y = ((a + 3*b) / c) + 4
-mCalc_Y2 MACRO a, b, c
-                push bx             ; Данные в стек
-                push cx
-                push dx
-
-                mov  bx, a          ; загрузить a в bx
-                mov  ax, b          ; загрузить b в ax
-                mov  cx, 3          ; загрузить 3 в cx
-
-                imul cx             ; ax = b * 3 (ax = 3*b)
-                add  ax, bx         ; ax = a + 3*b
-
-                xor  dx, dx         ; очистить для деления
-                xor  cx,cx
-
-                mov  cx, c          ; загрузить c в cx
-                cmp  cx, 0
-
-                je   DIV_BY_ZERO    ; если c = 0, переход к обработке деления на ноль
-                cwd
-                idiv cx             ; деление ax на c, результат в ax/dx
-                add  ax, 4          ; добавить 4 к результату
-                jmp  END_CALC_Y2
-    DIV_BY_ZERO:
-                xor  ax, ax         ; если деление на ноль, сохранить 0 в res
-    END_CALC_Y2:
-                pop  dx
-                pop  cx
-                pop  bx
-ENDM
-
 ; Макрос ввода 10-чного числа в регистр АХ
 mReadAX macro buffer, sizee
                    local input, startOfConvert, endOfConvert
@@ -157,3 +108,39 @@ mWriteStr macro string
               pop  dx
               pop  ax
 endm
+
+mClear macro                 ;Макрос очистки экрана
+           push ax
+           push bx
+           push cx
+           push dx
+
+           mov  ax,0600h     ; Подготавливает код для очистки экрана (функция 0).
+           mov  bh, 4Ch      ; Устанавливает цвет фона и шрифта
+           mov  cx, 0000     ; Указывает количество строк для очистки (все).
+           mov  dx, 184FH    ; Указывает адрес экрана (184FH — адрес видеопамяти).
+           int  10h          ; Вызывает прерывание BIOS для выполнения очистки экрана.
+
+           pop  dx
+           pop  cx
+           pop  bx
+           pop  ax
+ENDM
+
+mSetCursor MACRO row, col        ;Макрос установки курсора
+               push ax
+               push bx
+               push cx
+               push dx
+
+               mov  ah, 02     ; Установка курсора
+               mov  dh, row    ; номер строки в DH
+               mov  dl, col    ; номер столбца в DL
+               mov  bh, 0      ; Указывает страницу экрана (0).
+               int  10h
+
+               pop  dx
+               pop  cx
+               pop  bx
+               pop  ax
+ENDM

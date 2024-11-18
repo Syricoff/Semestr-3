@@ -1,0 +1,41 @@
+@startuml j
+start
+
+:Инициализация;
+
+repeat
+    :Вывод меню;
+    :Ожидание ввода;
+
+    if (Ввод '1'?) then (да)
+        :Ввод a, b, c, x;
+        
+        if (a > 0) then (да)
+            if (c == 0) then (да)
+                :ax = -a / (x - c);
+            else (нет)
+                :a * (x + c);
+            endif
+        else if (a < 0) then (да)
+        if (c != 0) then (да)
+                :ax = ax^2 + bx + c;
+            else (нет)
+                :a * (x + c);
+            endif
+        else (a == 0)
+            :ax = a * (x + c);
+        endif
+
+        :Вывод результата;
+        :Ожидание нажатия клавиши;
+        :Очистка экрана;
+
+    else if (Ввод '0'?) then (да)
+        :Выход;
+    else (иначе)
+        :Вернуться к выбору;
+    endif
+repeat while (true)
+
+stop
+@enduml
