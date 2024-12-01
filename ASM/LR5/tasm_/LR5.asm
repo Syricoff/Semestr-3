@@ -1,133 +1,110 @@
-include macroses.asm
+include macroses.asm        ; Подключение файла с макросами
+
 .model small
 .stack 100h
 .data
-  N          db 0
-  c          dw 0
-  d          dw 0
-  numbers    db 10 dup(0)            ; массив для 10 чисел
-  posCount   db 0                    ; счетчик положительных
-  negCount   db 0                    ; счетчик отрицательных
-  zeroCount  db 0                    ; счетчик нулевых
-  promptN    db 'Enter N (1-10): $'
-  promptC    db 'Enter c: $'
-  promptD    db 'Enter d: $'
-  promptNum  db 'Enter number: $'
-  resultMsg  db 'Positive: $'
-  resultPos  db 0
-  resultNeg  db 0
-  resultZero db 0
-  newline    db 0Dh, 0Ah, '$'
+    mes_n      db 'Enter the size of the array N (max 10): $'
+    mes_c      db 'Enter the value of C: $'
+    mes_d      db 'Enter the value of D: $'
+    mes_num    db 'Enter array element: $'
+    mes_pos    db 'Number of positive elements: $'
+    mes_neg    db 'Number of negative elements: $'
+    mes_zero   db 'Number of zero elements: $'
+    new_line   db 13, 10, '$'                                    ; Перевод строки
+    buf        db 7 dup(0)                                       ; Буфер для чтения ввода
+    n          dw ?                                              ; Переменная для хранения размера массива
+    c          dw ?                                              ; Переменная для хранения значения C
+    d          dw ?                                              ; Переменная для хранения значения D
+    arr        dw 10 dup(?)                                      ; Массив из 10 элементов (слова)
+    count_pos  dw 0
+    count_neg  dw 0
+    count_zero dw 0
 
 .code
-  main:         
-                mov       ax, @data
-                mov       ds, ax
+    start:            
+                      mov       ax, @data
+                      mov       ds, ax
 
-  ; Ввод N
-                mWriteStr promptN
-                call      mReadByte
-                sub       al, '0'             ; преобразуем символ в число
-                mov       N, al               ; сохраняем N
-                cmp       al, 1
-                jb        exit                ; если N < 1, выход
-                cmp       al, 10
-                ja        exit                ; если N > 10, выход
+    ; Ввод размера массива N
+                      mWriteStr mes_n
+                      mReadAX   buf, 3               ; Чтение размера массива в регистр AX
+                      cmp       ax, 10               ; Проверка, не превышает ли размер массива 10
+                      jbe       Valid_N
+                      mov       ax, 10               ; Ограничение размера массива значением 10, если введено больше
+    Valid_N:          
+                      mov       n, ax                ; Сохранение размера массива
 
-  ; Ввод c
-                mWriteStr promptC
-                call      mReadAX
-                mov       c, ax
+    ; Ввод значений C и D
+                      mWriteStr new_line
+                      mWriteStr mes_c
+                      mReadAX   buf, 7               ; Ввод значения C в регистр AX
+                      mov       c, ax                ; Сохранение C
 
-  ; Ввод d
-                mWriteStr promptD
-                call      mReadAX
-                mov       d, ax
+                      mWriteStr new_line
+                      mWriteStr mes_d
+                      mReadAX   buf, 7               ; Ввод значения D в регистр AX
+                      mov       d, ax                ; Сохранение D
 
-  ; Ввод чисел
-                mov       cl, N               ; CL = N
-                xor       si, si              ; SI = 0 (индекс массива)
+    ; Ввод массива
+                      xor       si, si               ; Обнуление индекса массива
+                      xor       cx, cx
+                      mov       cx, n                ; Установка счетчика цикла на количество элементов массива
+    InputArray:       
+                      mWriteStr new_line
+                      mWriteStr mes_num
+                      mReadAX   buf, 7               ; Ввод элемента массива
+                      mov       arr[si], ax          ; Сохранение элемента в массив
+                      add       si, 2                ; Переход к следующему элементу массива
+                      loop      InputArray           ; Повторение цикла, пока CX != 0
 
-  input_loop:   
-                mWriteStr promptNum
-                mReadAX
-                mov       numbers[si], al     ; сохраняем число в массив
-                inc       si                  ; увеличиваем индекс
+    ; Обработка массива
+                      xor       si, si               ; Сброс индекса массива
+                      xor       cx, cx
+                      mov       cx, n                ; Установка счетчика на количество введенных элементов
 
-  ; Проверка условия c <= a[i] <= d
-                cmp       ax, c
-                jb        not_in_range
-                cmp       ax, d
-                ja        not_in_range
+    ProcessArray:     
+                      mov       ax, arr[si]          ; Загрузка текущего элемента массива
+                      cmp       ax, c
+                      jl        NextElement          ; Переход к следующему элементу, если меньше С
+                      cmp       ax, d
+                      jg        NextElement          ; Переход к следующему элементу, если больше D
 
-  ; Увеличиваем счетчики
-                cmp       ax, 0
-                je        zero_case
-                jg        positive_case
-                jmp       negative_case
+    ; Условие выполнения: C <= arr[i] <= D
+                      cmp       ax, 0
+                      jg        IncrementPositive    ; > 0
+                      jl        IncrementNegative    ; < 0
+                      inc       count_zero           ; = 0
+                      jmp       NextElement
 
-  positive_case:
-                inc       posCount
-                jmp       next_input
+    IncrementPositive:
+                      inc       count_pos            ; Увеличение счетчика положительных элементов
+                      jmp       NextElement
+    IncrementNegative:
+                      inc       count_neg            ; Увеличение счетчика отрицательных элементов
+                      jmp       NextElement
 
-  negative_case:
-                inc       negCount
-                jmp       next_input
+    NextElement:      
+                      add       si, 2                ; Переход к следующему элементу массива
+                      loop      ProcessArray         ; Повторение цикла обработки массива
 
-  zero_case:    
-                inc       zeroCount
-                jmp       next_input
+    ; Вывод результатов
+                      mWriteStr new_line
+                      mWriteStr mes_pos
+                      mov       ax, count_pos
+                      mWriteAX                       ; Вывод количества положительных элементов
 
-  not_in_range: 
-  ; просто переходим к следующему числу
-                jmp       next_input
+                      mWriteStr new_line
+                      mWriteStr mes_neg
+                      mov       ax, count_neg
+                      mWriteAX                       ; Вывод количества отрицательных элементов
 
-  next_input:   
-                loop      input_loop          ; уменьшаем CL и повторяем, если не 0
+                      mWriteStr new_line
+                      mWriteStr mes_zero
+                      mov       ax, count_zero
+                      mWriteAX                       ; Вывод количества нулевых элементов
 
-  ; Вывод результата
-                mWriteStr resultMsg
-                mov       al, posCount
-                call      mWriteByte
-                mWriteStr newline
-                mWriteStr 'Negative: $'
-                mov       al, negCount
-                call      mWriteByte
-                mWriteStr newline
-                mWriteStr 'Zero: $'
-                mov       al, zeroCount
-                call      mWriteByte
-                mWriteStr newline
+    ; Завершение программы
+                      mov       ax, 4C00h
+                      int       21h
 
-  exit:         
-                mov       ax, 4c00h
-                int       21h
-
-  ; Подпрограммы для ввода/вывода
-mReadByte proc
-                mov       ah, 01h
-                int       21h
-                ret
-mReadByte endp
-
-mReadAX proc
-                mov       ah, 0
-                int       16h
-                ret
-mReadAX endp
-
-mWriteStr proc
-                mov       dx, offset promptN  ; пример, нужно передать строку
-                mov       ah, 09h
-                int       21h
-                ret
-mWriteStr endp
-
-mWriteByte proc
-                add       al, '0'             ; преобразуем число в символ
-                mov       ah, 02h
-                int       21h
-                ret
-mWriteByte endp
-
-end main
+end start

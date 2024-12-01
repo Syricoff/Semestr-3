@@ -1,0 +1,180 @@
+Turbo Assembler	 Version 4.1	    12/03/24 02:12:04	    Page 1
+lr6.ASM
+
+
+
+      1					 .386
+      2	00000000			 .model	flat, C
+      3	00000000			 .data
+      4
+      5	00000000  3F000000		 half		 dd 0.5
+      6	00000004  3F800000		 one		 dd 1.0
+      7	00000008  40000000		 two		 dd 2.0
+      8	0000000C  40400000		 three		 dd 3.0
+      9	00000010  40C00000		 six		 dd 6.0
+     10	00000014  00000000		 perem		 dd 0.0
+     11	00000018  00000000		 num		 dd 0.0
+     12	0000001C  00000000		 save1		 dd 0.0
+     13	00000020  00000000		 save2		 dd 0.0
+     14
+     15	00000024			 .code
+     16					 Public	C prog1
+     17					 Public	C prog2
+     18
+     19	00000000			 prog1 proc C x: dword
+1    20	00000000  C8 0000 00			 ENTERD	 00000h,0
+1    21	00000004  9B DB	E3			 finit
+     22						 ;(2 / (pow(tan(x), 2))) + ((pow(2, (x * sin(sqrt(3 * pow(x, 2)	+ 1))))) / (sin(x) *+
+     23					 cos(x)	* log2(sqrt(pow(x, 2) +	1))))
+     24	00000007  D9 45	08			 fld x			  ;ST(0)=x
+     25	0000000A  D8 C8				 fmul st(0), st(0)	  ;ST(0)=x^2
+     26	0000000C  D9 F2				 fptan			  ;ST(0)=1, ST(1)=result
+     27	0000000E  D9 C1				 fld st(1)		  ;ST(1) to ST(0)
+     28	00000010  D9 05	00000008r		 fld two		  ;ST(0)=two
+     29	00000016  D8 F1				 fdiv st(0), st(1)	  ;ST(0)=2/tg(x^2)
+     30	00000018  D9 1D	00000014r		 fstp perem		  ;save	perem
+     31
+     32	0000001E  D9 45	08			 fld x			  ;ST(0)=x
+     33	00000021  D8 C8				 fmul st(0), st(0)	  ;ST(0)=x^2
+     34	00000023  D9 05	0000000Cr		 fld three		  ;ST(0)=3, ST(1)=x^2
+     35	00000029  D8 C9				 fmul st(0), st(1)	  ;ST(0)=3*x^2
+     36	0000002B  D8 05	00000004r		 fadd one		  ;ST(0)=3*x^2+1
+     37	00000031  D9 FA				 fsqrt			  ;ST(0)=sqrt(3*x^2+1)
+     38	00000033  D9 FE				 fsin			  ;ST(0)=sin(sqrt(3*x^2+1))
+     39	00000035  D9 45	08			 fld x			  ;ST(0)=x, ST(1)=sin(sqrt(3*x^2+1))
+     40	00000038  D8 C9				 fmul st(0), st(1)	  ;ST(0)=x*sin(sqrt(3*x^2+1))
+     41	0000003A  D9 F0				 f2xm1 ;2^x - 1		  ;ST(0)=2^(x*sin(sqrt(3*x^2+1)))-1
+     42	0000003C  D8 05	00000004r		 fadd one		  ;ST(0)=2^(x*sin(sqrt(3*x^2+1)))
+     43	00000042  D9 1D	00000018r		 fstp num		  ;save	num
+     44
+     45	00000048  D9 45	08			 fld x			  ;ST(0)=x
+     46	0000004B  D8 C8				 fmul st(0), st(0)	  ;ST(0)=x^2
+     47	0000004D  D8 05	00000004r		 fadd one		  ;ST(0)=x^2+1
+     48	00000053  D9 FA				 fsqrt			  ;ST(0)=sqrt(x^2+1)
+     49	00000055  D9 1D	0000001Cr		 fstp save1		   ;save in save1
+     50	0000005B  D9 45	08			 fld x			  ;ST(0)=x
+     51	0000005E  D9 FF				 fcos			  ;ST(0)=cos(x)
+     52	00000060  D9 05	0000001Cr		 fld save1		   ;ST(0)=save1(=sqrt(x^2+1))
+     53	00000066  D9 F1				 fyl2x			  ;ST(0)=cos(x)*log(sqrt(x^2+1)) (y*log(x))
+     54	00000068  D9 45	08			 fld x			  ;ST(0)=x, ST(1)=cos(x)*log(sqrt(x^2+1))
+     55	0000006B  D9 FE				 fsin			  ;ST(0)=sin(x), ST(1)=cos(x)*log(sqrt(x^2+1))
+     56	0000006D  D8 C9				 fmul st(0), st(1)	  ;ST(0)=sin(x)*cos(x)*log(sqrt(x^2+1))
+     57
+Turbo Assembler	 Version 4.1	    12/03/24 02:12:04	    Page 2
+lr6.ASM
+
+
+
+     58	0000006F  D9 05	00000018r		 fld num		  ;ST(0)=num
+     59	00000075  D8 F1				 fdiv st(0), st(1)	  ;ST(0)=num/sin(x)*cos(x)*log(sqrt(x^2+1))
+     60	00000077  D8 05	00000014r		 fadd perem		  ;ST(0)=2^(x*sin(sqrt(3*x^2+1)))/sin(x)*cos(x)*log(sqrt(x^2+
+     61					 +1))+2/tg(x^2)
+     62	0000007D  9B				 fwait
+1    63	0000007E  C9				 LEAVED
+1    64	0000007F  C3				 RET	 00000h
+     65	00000080			 prog1 endp
+     66
+     67
+     68
+     69	00000080			 prog2 proc C x: dword
+1    70	00000080  C8 0000 00			 ENTERD	 00000h,0
+1    71	00000084  9B DB	E3			 finit
+     72	00000087  D9 45	08			 fld x			  ;ST(0)=x
+     73	0000008A  D9 E4				 ftst			  ;compare ST(0) and 0
+     74	0000008C  9B DF	E0			 FSTSW AX
+     75	0000008F  9E				 SAHF
+     76	00000090  72 1E	90 90 90 90		 jb case_1
+     77	00000096  D9 05	00000000r		 fld half
+     78	0000009C  D9 45	08			 fld x			  ;<0
+     79	0000009F  D8 D9				 fcomp st(1)		  ;compare
+     80	000000A1  9B DF	E0			 FSTSW AX
+     81	000000A4  9E				 SAHF
+     82	000000A5  77 2B	90 90 90 90		 ja case_3		  ;>0,5
+     83	000000AB  EB 11	90 90 90		 jmp case_2		  ;else
+     84
+     85	000000B0				 case_1:
+     86	000000B0  D9 45	08			 fld x			  ;ST(0)=x
+     87	000000B3  D9 FF				 fcos			  ;ST(0)=cos(x)
+     88	000000B5  D8 C8				 fmul st(0), st(0)	  ;ST(0)=(cos(x))^2
+     89	000000B7  D8 C8				 fmul st(0), st(0)	      ;ST(0)=(cos(x))^4
+     90	000000B9  EB 40	90 90 90		 jmp fin
+     91
+     92	000000BE				 case_2:
+     93	000000BE  D9 45	08			 fld x			  ;ST(0)=x
+     94	000000C1  D9 F0				 f2xm1			  ;ST(0)=2^x-1
+     95	000000C3  D9 05	00000010r		 fld six		  ;ST(0)=6
+     96	000000C9  D9 C1				 fld st(1)		  ;ST(1)=6
+     97	000000CB  D8 E1				 fsub st(0), st(1)	  ;ST(0)=2^x-7
+     98	000000CD  EB 2C	90 90 90		 jmp fin
+     99
+    100	000000D2				 case_3:
+    101	000000D2  D9 45	08			 fld x			  ;ST(0)=x
+    102	000000D5  D8 C8				 fmul st(0), st(0)	  ;ST(0)=x^2
+    103	000000D7  D8 05	00000004r		 fadd one		  ;ST(0)=x^2+1
+    104	000000DD  D9 1D	00000020r		 fstp save2		  ;save	in save2
+    105	000000E3  D9 05	00000004r		 fld one		  ;ST(0)=1
+    106	000000E9  D9 45	08			 fld x			  ;ST(0)=x, ST(1)=1
+    107	000000EC  D8 E1				 fsub st(0), st(1)	  ;ST(0)=x-1
+    108	000000EE  D9 05	00000020r		 fld save2		  ;ST(0)=x^2+1
+    109	000000F4  D8 C9				 fmul st(0), st(1)	  ;ST(0)=(x^2+1)(x-1)
+    110	000000F6  EB 03	90 90 90		 jmp fin
+    111
+    112	000000FB				 fin:
+1   113	000000FB  C9				 LEAVED
+1   114	000000FC  C3				 RET	 00000h
+Turbo Assembler	 Version 4.1	    12/03/24 02:12:04	    Page 3
+lr6.ASM
+
+
+
+    115	000000FD  9B				 fwait
+    116	000000FE			 prog2 endp
+    117					 end
+Turbo Assembler	 Version 4.1	    12/03/24 02:12:04	    Page 4
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "12/03/24"
+??FILENAME			  Text	 "lr6	  "
+??TIME				  Text	 "02:12:04"
+??VERSION			  Number 040A
+@32BIT				  Text	 1
+@CODE				  Text	 FLAT
+@CODESIZE			  Text	 0
+@CPU				  Text	 0F0FH
+@CURSEG				  Text	 _TEXT
+@DATA				  Text	 FLAT
+@DATASIZE			  Text	 0
+@FILENAME			  Text	 LR6
+@INTERFACE			  Text	 001H
+@MODEL				  Text	 1
+@STACK				  Text	 FLAT
+@WORDSIZE			  Text	 4
+CASE_1				  Near	 FLAT:00B0
+CASE_2				  Near	 FLAT:00BE
+CASE_3				  Near	 FLAT:00D2
+FIN				  Near	 FLAT:00FB
+HALF				  Dword	 FLAT:0000
+NUM				  Dword	 FLAT:0018
+ONE				  Dword	 FLAT:0004
+PEREM				  Dword	 FLAT:0014
+PROG1 (_PROG1)			  Near	 FLAT:0000
+PROG2 (_PROG2)			  Near	 FLAT:0080
+SAVE1				  Dword	 FLAT:001C
+SAVE2				  Dword	 FLAT:0020
+SIX				  Dword	 FLAT:0010
+THREE				  Dword	 FLAT:000C
+TWO				  Dword	 FLAT:0008
+X				  Number [FLAT:EBP+0008]
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+DGROUP				  Group
+  _DATA				  32  0024 Dword  Public  DATA
+FLAT				  Group
+_TEXT				  32  00FE Dword  Public  CODE
+
