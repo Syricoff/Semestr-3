@@ -1,0 +1,10 @@
+1 string
+gnirts 2
+3 string
+gnirts 4
+5 string
+gnirts 6
+7 string
+gnirts 8
+9 string
+gnirts 01
