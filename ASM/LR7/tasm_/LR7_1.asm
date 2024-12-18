@@ -2,16 +2,12 @@ sc segment 'code'
 assume cs:sc, ds:sc
 org 256
 start proc
+JUMPS
 mPrint macro string
                                mov      ah, 09h
                                lea      dx, string
                                int      21h
 endm
-    ; Инициализация сегмента данных
-                        mov    ax, @data
-                        mov    ds, ax
-                        mov    es, ax
-
     ; Открытие входного файла
                         mov    ah, 3Dh
                         xor    al, al
@@ -167,7 +163,7 @@ endm
                         mov    ax, 4C00h
                         int    21h
 
-input_file_name        db "infile.txt", 0
+    input_file_name        db "infile.txt", 0
     output_file_name       db "outfile.txt", 0
 
     input_file_ID          dw ?
@@ -189,4 +185,5 @@ input_file_name        db "infile.txt", 0
     reverse_buffer         db 255 dup(0)                               ; Буфер для реверсированной строки
 start endp
 sc ends
-endstart
+NOJUMPS
+end start
