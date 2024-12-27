@@ -19,7 +19,7 @@ endm
     ; Создание выходного файла
                         mov    ah, 3Ch
                         xor    cx, cx
-                        lea    dx, output_file_name
+                        lea    dx, output_file_name1
                         int    21h
                         jc     creation_error
                         mov    output_file_ID, ax
@@ -165,6 +165,7 @@ endm
 
     input_file_name        db "infile.txt", 0
     output_file_name       db "outfile.txt", 0
+    output_file_name1      db "SNS.txt", 0
 
     input_file_ID          dw ?
     output_file_ID         dw ?

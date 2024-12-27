@@ -1,0 +1,6 @@
+    opening_error_message  db "File could not be opened
+detaerc eb ton dluoc eliF" bd egassem_rorre_noitaerc    
+    read_error_message     db File could not be read
+elif ot gnitirw ni rorrE bd    egassem_rorre_etirw    
+    completion_message     db Program completed successfully
+    
