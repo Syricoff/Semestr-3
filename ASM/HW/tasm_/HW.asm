@@ -62,7 +62,8 @@ include macroses.asm        ; Подключение файла с макрос�
 
 
 .code
-    start:          
+    start:        
+    JUMPS  
                     mov                  ax, @data
                     mov                  ds, ax
 
@@ -184,4 +185,5 @@ include macroses.asm        ; Подключение файла с макрос�
     exit:           
                     mov                  ax, 4c00h
                     int                  21h
+    NOJUMPS
 end Start

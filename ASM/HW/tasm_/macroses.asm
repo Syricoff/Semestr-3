@@ -137,288 +137,296 @@ mClear macro start           ;Макрос очистки экрана
 endm
 
 mReadMatrix macro matrix, row, col
-            local rowLoop, colLoop
-            JUMPS ; Директива, делающая возможным большие прыжки
-            push bx ; Сохранение регистров, используемых в макросе, в стек
-            push cx
-            push si
+                local     rowLoop, colLoop
+                JUMPS                           ; Директива, делающая возможным большие прыжки
+                push      bx                    ; Сохранение регистров, используемых в макросе, в стек
+                push      cx
+                push      si
 
-            xor bx, bx ; Обнуляем смещение по строкам
-            mov cx, row
+                xor       bx, bx                ; Обнуляем смещение по строкам
+                mov       cx, row
 
-            rowLoop: ; Внешний цикл, проходящий по строкам
-                    push cx
-                    xor si, si ; Обнуляем смещение по столбцам
-                    mov cx, col
-            colLoop: ; Внутренний цикл, проходящий по столбцам
-                    mReadAX buffer 4 ; Макрос ввода значения регистра AX с клавиатуры
-                    mov matrix[bx][si], ax
-                    add si, 2 ; Переходим к следующему элементу (размером в слово)
-                    loop colLoop
-            mWriteStr endl ; Макрос вывода строки на экран 
-            add bx, col ; Увеличиваем смещение по строкам
-            add bx, col ; (дважды, так как размер каждого элемента - слово)
-            pop cx
-            loop rowLoop
+    rowLoop:                                    ; Внешний цикл, проходящий по строкам
+                push      cx
+                xor       si, si                ; Обнуляем смещение по столбцам
+                mov       cx, col
+    colLoop:                                    ; Внутренний цикл, проходящий по столбцам
+                mReadAX   buffer 4              ; Макрос ввода значения регистра AX с клавиатуры
+                mov       matrix[bx][si], ax
+                add       si, 2                 ; Переходим к следующему элементу (размером в слово)
+                loop      colLoop
+                mWriteStr endl                  ; Макрос вывода строки на экран
+                add       bx, col               ; Увеличиваем смещение по строкам
+                add       bx, col               ; (дважды, так как размер каждого элемента - слово)
+                pop       cx
+                loop      rowLoop
             
-            pop si ; Перенос сохранённых значений обратно в регистры
-            pop cx
-            pop bx
-            NOJUMPS ; Прекращение действия директивы JUMPS
+                pop       si                    ; Перенос сохранённых значений обратно в регистры
+                pop       cx
+                pop       bx
+                NOJUMPS                         ; Прекращение действия директивы JUMPS
 endm
 
 
 mWriteMatrix macro matrix, row, col
-    local rowLoop, colLoop
-    push ax ; Сохранение регистров, используемых в макросе, в стек
-    push bx
-    push cx
-    push si
+                 local     rowLoop, colLoop
+                 push      ax                    ; Сохранение регистров, используемых в макросе, в стек
+                 push      bx
+                 push      cx
+                 push      si
 
-    xor bx, bx ; Обнуляем смещение по строкам
-    mov cx, row
-    rowLoop: ; Внешний цикл, проходящий по строкам
-            push cx
-            xor si, si ; Обнуляем смещение по столбцам
-            mov cx, col
+                 xor       bx, bx                ; Обнуляем смещение по строкам
+                 mov       cx, row
+    rowLoop:                                     ; Внешний цикл, проходящий по строкам
+                 push      cx
+                 xor       si, si                ; Обнуляем смещение по столбцам
+                 mov       cx, col
             
-    colLoop: ; Внутренний цикл, проходящий по столбцам
-            mov ax, matrix[bx][si] ; bx - смещение по строкам, si - по столбцам
-            mWriteAX ; Макрос вывода значения регистра AX на экран 
-            ; Вывод текущего элемента матрицы
-            xor ax, ax
-            mWriteStr tab ; Макрос вывода строки на экран
-            ; Вывод на экран табуляции, разделяющей элементы строки
-            add si, 2 ; Переходим к следующему элементу (размером в слово)
-            loop colLoop
+    colLoop:                                     ; Внутренний цикл, проходящий по столбцам
+                 mov       ax, matrix[bx][si]    ; bx - смещение по строкам, si - по столбцам
+                 mWriteAX                        ; Макрос вывода значения регистра AX на экран
+    ; Вывод текущего элемента матрицы
+                 xor       ax, ax
+                 mWriteStr tab                   ; Макрос вывода строки на экран
+    ; Вывод на экран табуляции, разделяющей элементы строки
+                 add       si, 2                 ; Переходим к следующему элементу (размером в слово)
+                 loop      colLoop
 
-    mWriteStr endl ; Макрос вывода строки на экран
+                 mWriteStr endl                  ; Макрос вывода строки на экран
     ; Перенос курсора и каретки на следующую строку
-    add bx, col ; Увеличиваем смещение по строкам
-    add bx, col ; (дважды, так как размер каждого элемента - слово)
-    pop cx
-    loop rowLoop
+                 add       bx, col               ; Увеличиваем смещение по строкам
+                 add       bx, col               ; (дважды, так как размер каждого элемента - слово)
+                 pop       cx
+                 loop      rowLoop
 
-    pop si ; Перенос сохранённых значений обратно в регистры
-    pop cx
-    pop bx
-    pop ax
+                 pop       si                    ; Перенос сохранённых значений обратно в регистры
+                 pop       cx
+                 pop       bx
+                 pop       ax
 endm
 
 mTransposeMatrix macro matrix, row, col, resMatrix
-local rowLoop, colLoop
-push ax ; Сохранение регистров, используемых в макросе, в стек
-push bx
-push cx
-push di
-push si
-push dx
-xor di, di ; Обнуляем смещение по строкам
-mov cx, row
-rowLoop: ; Внешний цикл, проходящий по строкам
-push cx
-xor si, si ; Обнуляем смещение по столбцам
-mov cx, col
-colLoop: ; Внутренний цикл, проходящий по столбцам
-mov ax, col
-mul di ; Устанавливаем смещение по строкам
-add ax, si ; Устанавливаем смешение по столбцам
-mov bx, ax
-mov ax, matrix[bx]
-push ax ; Заносим текущий элемент в стек
-mov ax, row
-mul si ; Устанавливаем смещение по строкам
-add ax, di ; Устанавливаем смешение по столбцам
-; (смещения по строкам и столбцам меняются 
-; местами по сравнению с оригинальной матрицей)
-mov bx, ax
-pop ax
-mov resMatrix[bx], ax ; Заносим в новую матрицу элемент, сохранённый в стеке
-add si, 2 ; Переходим к следующему элементу (размером в слово)
-loop colLoop
-add di, 2 ; Переходим к следующей строке
-pop cx
-loop rowLoop
-pop dx ; Перенос сохранённых значений обратно в регистры
-pop si
-pop di
-pop cx
-pop bx
-pop ax
+                     local rowLoop, colLoop
+                     push  ax                   ; Сохранение регистров, используемых в макросе, в стек
+                     push  bx
+                     push  cx
+                     push  di
+                     push  si
+                     push  dx
+                     xor   di, di               ; Обнуляем смещение по строкам
+                     mov   cx, row
+    rowLoop:                                    ; Внешний цикл, проходящий по строкам
+                     push  cx
+                     xor   si, si               ; Обнуляем смещение по столбцам
+                     mov   cx, col
+    colLoop:                                    ; Внутренний цикл, проходящий по столбцам
+                     mov   ax, col
+                     mul   di                   ; Устанавливаем смещение по строкам
+                     add   ax, si               ; Устанавливаем смешение по столбцам
+                     mov   bx, ax
+                     mov   ax, matrix[bx]
+                     push  ax                   ; Заносим текущий элемент в стек
+                     mov   ax, row
+                     mul   si                   ; Устанавливаем смещение по строкам
+                     add   ax, di               ; Устанавливаем смешение по столбцам
+    ; (смещения по строкам и столбцам меняются
+    ; местами по сравнению с оригинальной матрицей)
+                     mov   bx, ax
+                     pop   ax
+                     mov   resMatrix[bx], ax    ; Заносим в новую матрицу элемент, сохранённый в стеке
+                     add   si, 2                ; Переходим к следующему элементу (размером в слово)
+                     loop  colLoop
+                     add   di, 2                ; Переходим к следующей строке
+                     pop   cx
+                     loop  rowLoop
+                     pop   dx                   ; Перенос сохранённых значений обратно в регистры
+                     pop   si
+                     pop   di
+                     pop   cx
+                     pop   bx
+                     pop   ax
 endm
 
 mFindMinMaxInRows macro matrix, rows, cols, index, minMaxElement
-    local rowLoop, colLoop, skipUpdate, nextRow
+                      local     rowLoop, colLoop, skipUpdate, nextRow
 
-    push ax
-    push bx
-    push cx
-    push dx
-    push si
-    push di
+                      push      ax
+                      push      bx
+                      push      cx
+                      push      dx
+                      push      si
+                      push      di
 
-    mov di, 7FFFh         ; Инициализируем минимальный максимум (очень большое значение)
-    xor dx, dx            ; Текущий максимум строки
-    xor ax, ax            ; Сброс регистра ax
-    xor bx, bx            ; Смещение строки
-    xor cx, cx            ; Сброс счетчика строк
+                      mov       di, 7FFFh                                ; Инициализируем минимальный максимум (очень большое значение)
+                      xor       dx, dx                                   ; Текущий максимум строки
+                      xor       ax, ax                                   ; Сброс регистра ax
+                      xor       bx, bx                                   ; Смещение строки
+                      xor       cx, cx                                   ; Сброс счетчика строк
 
-    mov cx, rows          ; cx = количество строк
-    xor si, si            ; si = индекс текущей строки
+                      mov       cx, rows                                 ; cx = количество строк
+                      xor       si, si                                   ; si = индекс текущей строки
 
-rowLoop:
-    push cx               ; Сохраняем счетчик строк
-    mov bx, si            ; bx = номер строки
-    imul bx, cols         ; bx = смещение начала строки (учитываем количество столбцов)
-    shl bx, 1             ; Умножаем на 2, так как элементы занимают по 2 байта
-    mov cx, cols          ; cx = количество столбцов
-    mov dx, 8000h         ; Устанавливаем максимум строки в минимальное значение
+    rowLoop:          
+                      push      cx                                       ; Сохраняем счетчик строк
+                      mov       bx, si                                   ; bx = номер строки
+                      imul      bx, cols                                 ; bx = смещение начала строки (учитываем количество столбцов)
+                      shl       bx, 1                                    ; Умножаем на 2, так как элементы занимают по 2 байта
+                      mov       cx, cols                                 ; cx = количество столбцов
+                      mov       dx, 8000h                                ; Устанавливаем максимум строки в минимальное значение
 
-colLoop:
-    mov ax, matrix[bx]    ; Загружаем текущий элемент
-    cmp ax, dx            ; Сравниваем с текущим максимумом строки
-    jle nextCol           ; Если максимум не обновляется, перейти
-    mov dx, ax            ; Обновляем максимум строки
+    colLoop:          
+                      mov       ax, matrix[bx]                           ; Загружаем текущий элемент
+                      cmp       ax, dx                                   ; Сравниваем с текущим максимумом строки
+                      jle       nextCol                                  ; Если максимум не обновляется, перейти
+                      mov       dx, ax                                   ; Обновляем максимум строки
 
-nextCol:
-    add bx, 2             ; Переходим к следующему элементу строки
-    loop colLoop          ; Повторяем для всех элементов строки
+    nextCol:          
+                      add       bx, 2                                    ; Переходим к следующему элементу строки
+                      loop      colLoop                                  ; Повторяем для всех элементов строки
 
-    cmp dx, di            ; Сравниваем максимум строки с минимальным максимумом
-    jge skipUpdate        ; Если не меньше, пропускаем обновление
-    mov di, dx            ; Обновляем минимальный максимум
-    mov [index], si       ; Сохраняем индекс текущей строки
+                    ;   mWriteStr "Min/Max element in row "
+                    ;   mov       ax, si
+                    ;   mWriteAX
+                      mWriteStr 10,13
+                      mov       ax, dx
+                      mWriteAX
 
-skipUpdate:
-    inc si                ; Переход к следующей строке (индекс строки)
-    pop cx                ; Восстанавливаем счетчик строк
-    loop rowLoop          ; Переход к следующей строке
+                      mov       ax, dx
+                      cmp       dx, di                                   ; Сравниваем максимум строки с минимальным максимумом
+                      jge       skipUpdate                               ; Если не меньше, пропускаем обновление
+                      mov       di, dx                                   ; Обновляем минимальный максимум
+                      mov       [index], si                              ; Сохраняем индекс текущей строки
 
-    mov [minMaxElement], di ; Сохраняем минимальный максимум
+    skipUpdate:       
+                      inc       si                                       ; Переход к следующей строке (индекс строки)
+                      pop       cx                                       ; Восстанавливаем счетчик строк
+                      loop      rowLoop                                  ; Переход к следующей строке
 
-    pop di
-    pop si
-    pop dx
-    pop cx
-    pop bx
-    pop ax
+                      mov       [minMaxElement], di                      ; Сохраняем минимальный максимум
+
+                      pop       di
+                      pop       si
+                      pop       dx
+                      pop       cx
+                      pop       bx
+                      pop       ax
 endm
 
 mCheckMatrixRange macro matrix, rows, cols, n, k, result
-    local rowLoop, colLoop, checkFail, nextElement, endCheck
+                      local rowLoop, colLoop, checkFail, nextElement, endCheck
 
-    push ax
-    push bx
-    push cx
-    push dx
-    push si
-    push di
+                      push  ax
+                      push  bx
+                      push  cx
+                      push  dx
+                      push  si
+                      push  di
 
-    xor si, si            ; si = 0, для работы с индексами матрицы
-    xor di, di            ; di = 0, начальный результат (будет 1, если условие выполнено)
-    mov di, 1             ; Предполагаем, что матрица соответствует условию
+                      xor   si, si                                                ; si = 0, для работы с индексами матрицы
+                      xor   di, di                                                ; di = 0, начальный результат (будет 1, если условие выполнено)
+                      mov   di, 1                                                 ; Предполагаем, что матрица соответствует условию
 
-    mov cx, rows          ; cx = количество строк
+                      mov   cx, rows                                              ; cx = количество строк
 
-rowLoop:
-    push cx               ; Сохраняем счетчик строк
-    mov bx, si            ; bx = номер строки
-    imul bx, cols         ; bx = смещение начала строки (учет количества столбцов)
-    shl bx, 1             ; Умножаем на 2, так как элементы занимают 2 байта
-    mov cx, cols          ; cx = количество столбцов
+    rowLoop:          
+                      push  cx                                                    ; Сохраняем счетчик строк
+                      mov   bx, si                                                ; bx = номер строки
+                      imul  bx, cols                                              ; bx = смещение начала строки (учет количества столбцов)
+                      shl   bx, 1                                                 ; Умножаем на 2, так как элементы занимают 2 байта
+                      mov   cx, cols                                              ; cx = количество столбцов
 
-colLoop:
-    mov ax, matrix[bx]    ; Загружаем текущий элемент
-    cmp ax, n             ; Сравниваем с n
-    jle checkFail         ; Если элемент <= n, условие не выполнено
-    cmp ax, k             ; Сравниваем с k
-    jge checkFail         ; Если элемент >= k, условие не выполнено
+    colLoop:          
+                      mov   ax, matrix[bx]                                        ; Загружаем текущий элемент
+                      cmp   ax, n                                                 ; Сравниваем с n
+                      jle   checkFail                                             ; Если элемент <= n, условие не выполнено
+                      cmp   ax, k                                                 ; Сравниваем с k
+                      jge   checkFail                                             ; Если элемент >= k, условие не выполнено
 
-nextElement:
-    add bx, 2             ; Переход к следующему элементу строки
-    loop colLoop          ; Повторяем для всех элементов строки
-    pop cx                ; Восстанавливаем счетчик строк
-    inc si                ; Переход к следующей строке
-    loop rowLoop          ; Переход к следующей строке
-    jmp endCheck          ; Завершаем проверку
+    nextElement:      
+                      add   bx, 2                                                 ; Переход к следующему элементу строки
+                      loop  colLoop                                               ; Повторяем для всех элементов строки
+                      pop   cx                                                    ; Восстанавливаем счетчик строк
+                      inc   si                                                    ; Переход к следующей строке
+                      loop  rowLoop                                               ; Переход к следующей строке
+                      jmp   endCheck                                              ; Завершаем проверку
 
-checkFail:
-    mov di, 0             ; Условие не выполнено
-    jmp endCheck          ; Прерываем проверку
+    checkFail:        
+                      mov   di, 0                                                 ; Условие не выполнено
+                      jmp   endCheck                                              ; Прерываем проверку
 
-endCheck:
-    mov [result], di      ; Сохраняем результат: 1 = соответствует, 0 = не соответствует
+    endCheck:         
+                      mov   [result], di                                          ; Сохраняем результат: 1 = соответствует, 0 = не соответствует
 
-    pop di
-    pop si
-    pop dx
-    pop cx
-    pop bx
-    pop ax
+                      pop   di
+                      pop   si
+                      pop   dx
+                      pop   cx
+                      pop   bx
+                      pop   ax
 endm
 
 mRowNegativeSumsCopy macro matrix, rows, cols, result
-    local copyMatrix, processRow, processCol, endMacro
+                         local copyMatrix, processRow, processCol, endMacro
 
-    push ax
-    push bx
-    push cx
-    push dx
-    push si
-    push di
+                         push  ax
+                         push  bx
+                         push  cx
+                         push  dx
+                         push  si
+                         push  di
 
     ; Копируем исходную матрицу в result
-    xor si, si             ; si = индекс исходной матрицы
-    xor di, di             ; di = индекс для копии
-    mov cx, rows           ; cx = количество строк
-    imul cx, cols          ; cx = общее количество элементов
-    shl cx, 1              ; Умножаем на 2 (размер word)
+                         xor   si, si                                          ; si = индекс исходной матрицы
+                         xor   di, di                                          ; di = индекс для копии
+                         mov   cx, rows                                        ; cx = количество строк
+                         imul  cx, cols                                        ; cx = общее количество элементов
+                         shl   cx, 1                                           ; Умножаем на 2 (размер word)
 
-copyMatrix:
-    mov ax, matrix[si]     ; Загружаем элемент исходной матрицы
-    mov result[di], ax     ; Копируем в result
-    add si, 2              ; Переход к следующему элементу
-    add di, 2              ; Переход к следующей ячейке в result
-    loop copyMatrix         ; Повторяем для всех элементов
+    copyMatrix:          
+                         mov   ax, matrix[si]                                  ; Загружаем элемент исходной матрицы
+                         mov   result[di], ax                                  ; Копируем в result
+                         add   si, 2                                           ; Переход к следующему элементу
+                         add   di, 2                                           ; Переход к следующей ячейке в result
+                         loop  copyMatrix                                      ; Повторяем для всех элементов
 
     ; Обрабатываем строки для вычисления сумм отрицательных
-    xor si, si             ; Индекс начала текущей строки в result
-    xor di, si             ; Индекс записи результата (совпадает с si)
-    mov cx, rows           ; cx = количество строк
+                         xor   si, si                                          ; Индекс начала текущей строки в result
+                         xor   di, si                                          ; Индекс записи результата (совпадает с si)
+                         mov   cx, rows                                        ; cx = количество строк
 
-processRow:
-    push cx                ; Сохраняем счётчик строк
-    xor dx, dx             ; dx = сумма отрицательных элементов
-    mov bx, si             ; bx = начальный адрес текущей строки
-    mov cx, cols           ; cx = количество столбцов в строке
+    processRow:          
+                         push  cx                                              ; Сохраняем счётчик строк
+                         xor   dx, dx                                          ; dx = сумма отрицательных элементов
+                         mov   bx, si                                          ; bx = начальный адрес текущей строки
+                         mov   cx, cols                                        ; cx = количество столбцов в строке
 
-processCol:
-    mov ax, result[bx]     ; Загружаем элемент текущей строки
-    cmp ax, 0              ; Проверяем, является ли элемент отрицательным
-    jge skipAdd            ; Если >= 0, пропускаем
-    add dx, ax             ; Добавляем к сумме отрицательных
+    processCol:          
+                         mov   ax, result[bx]                                  ; Загружаем элемент текущей строки
+                         cmp   ax, 0                                           ; Проверяем, является ли элемент отрицательным
+                         jge   skipAdd                                         ; Если >= 0, пропускаем
+                         add   dx, ax                                          ; Добавляем к сумме отрицательных
 
-skipAdd:
-    add bx, 2              ; Переход к следующему элементу в строке
-    loop processCol        ; Повторяем для всех столбцов
+    skipAdd:             
+                         add   bx, 2                                           ; Переход к следующему элементу в строке
+                         loop  processCol                                      ; Повторяем для всех столбцов
 
-    cmp dx, 0
-    jz endRow            ; Если сумма отрицательных не ноль, продолжаем обработку
+                         cmp   dx, 0
+                         jz    endRow                                          ; Если сумма отрицательных не ноль, продолжаем обработку
     ; Записываем сумму отрицательных элементов в начало строки
-    mov result[si], dx     ; Записываем сумму в начало текущей строки
-endRow:
+                         mov   result[si], dx                                  ; Записываем сумму в начало текущей строки
+    endRow:              
     ; Переход к следующей строке
-    add si, cols           ; Смещение для следующей строки
-    add si, cols              ; Умножаем на 2 (размер word)
+                         add   si, cols                                        ; Смещение для следующей строки
+                         add   si, cols                                        ; Умножаем на 2 (размер word)
 
-    pop cx                 ; Восстанавливаем счётчик строк
-    loop processRow        ; Обрабатываем следующую строку
+                         pop   cx                                              ; Восстанавливаем счётчик строк
+                         loop  processRow                                      ; Обрабатываем следующую строку
 
-endMacro:
-    pop di
-    pop si
-    pop dx
-    pop cx
-    pop bx
-    pop ax
+    endMacro:            
+                         pop   di
+                         pop   si
+                         pop   dx
+                         pop   cx
+                         pop   bx
+                         pop   ax
 endm
